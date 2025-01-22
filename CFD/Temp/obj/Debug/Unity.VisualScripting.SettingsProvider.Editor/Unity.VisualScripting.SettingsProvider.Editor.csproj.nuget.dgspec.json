@@ -1,0 +1,717 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/mironcosmin/CFD/Unity.VisualScripting.SettingsProvider.Editor.csproj": {}
+  },
+  "projects": {
+    "/Users/mironcosmin/CFD/Unity.InputSystem.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mironcosmin/CFD/Unity.InputSystem.csproj",
+        "projectName": "Unity.InputSystem",
+        "projectPath": "/Users/mironcosmin/CFD/Unity.InputSystem.csproj",
+        "packagesPath": "/Users/mironcosmin/.nuget/packages/",
+        "outputPath": "/Users/mironcosmin/CFD/Temp/obj/Debug/Unity.InputSystem/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mironcosmin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/mironcosmin/CFD/UnityEditor.UI.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEditor.UI.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEngine.UI.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.csproj",
+        "projectName": "Unity.VisualScripting.Core",
+        "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.csproj",
+        "packagesPath": "/Users/mironcosmin/.nuget/packages/",
+        "outputPath": "/Users/mironcosmin/CFD/Temp/obj/Debug/Unity.VisualScripting.Core/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mironcosmin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/mironcosmin/CFD/Unity.InputSystem.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/Unity.InputSystem.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEditor.UI.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEditor.UI.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEngine.UI.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.Editor.csproj",
+        "projectName": "Unity.VisualScripting.Core.Editor",
+        "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.Editor.csproj",
+        "packagesPath": "/Users/mironcosmin/.nuget/packages/",
+        "outputPath": "/Users/mironcosmin/CFD/Temp/obj/Debug/Unity.VisualScripting.Core.Editor/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mironcosmin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEditor.TestRunner.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEditor.TestRunner.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEditor.UI.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEditor.UI.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEngine.TestRunner.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEngine.TestRunner.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEngine.UI.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mironcosmin/CFD/Unity.VisualScripting.Flow.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mironcosmin/CFD/Unity.VisualScripting.Flow.csproj",
+        "projectName": "Unity.VisualScripting.Flow",
+        "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.Flow.csproj",
+        "packagesPath": "/Users/mironcosmin/.nuget/packages/",
+        "outputPath": "/Users/mironcosmin/CFD/Temp/obj/Debug/Unity.VisualScripting.Flow/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mironcosmin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/mironcosmin/CFD/Unity.InputSystem.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/Unity.InputSystem.csproj"
+              },
+              "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEditor.UI.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEditor.UI.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEngine.UI.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mironcosmin/CFD/Unity.VisualScripting.Flow.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mironcosmin/CFD/Unity.VisualScripting.Flow.Editor.csproj",
+        "projectName": "Unity.VisualScripting.Flow.Editor",
+        "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.Flow.Editor.csproj",
+        "packagesPath": "/Users/mironcosmin/.nuget/packages/",
+        "outputPath": "/Users/mironcosmin/CFD/Temp/obj/Debug/Unity.VisualScripting.Flow.Editor/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mironcosmin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/mironcosmin/CFD/Unity.InputSystem.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/Unity.InputSystem.csproj"
+              },
+              "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.csproj"
+              },
+              "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.Editor.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.Editor.csproj"
+              },
+              "/Users/mironcosmin/CFD/Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.Flow.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEditor.TestRunner.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEditor.TestRunner.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEditor.UI.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEditor.UI.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEngine.TestRunner.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEngine.TestRunner.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEngine.UI.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mironcosmin/CFD/Unity.VisualScripting.SettingsProvider.Editor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mironcosmin/CFD/Unity.VisualScripting.SettingsProvider.Editor.csproj",
+        "projectName": "Unity.VisualScripting.SettingsProvider.Editor",
+        "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.SettingsProvider.Editor.csproj",
+        "packagesPath": "/Users/mironcosmin/.nuget/packages/",
+        "outputPath": "/Users/mironcosmin/CFD/Temp/obj/Debug/Unity.VisualScripting.SettingsProvider.Editor/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mironcosmin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.csproj"
+              },
+              "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.Editor.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.Editor.csproj"
+              },
+              "/Users/mironcosmin/CFD/Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.Flow.csproj"
+              },
+              "/Users/mironcosmin/CFD/Unity.VisualScripting.Flow.Editor.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.Flow.Editor.csproj"
+              },
+              "/Users/mironcosmin/CFD/Unity.VisualScripting.State.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.State.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEditor.TestRunner.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEditor.TestRunner.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEditor.UI.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEditor.UI.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEngine.TestRunner.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEngine.TestRunner.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEngine.UI.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mironcosmin/CFD/Unity.VisualScripting.State.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mironcosmin/CFD/Unity.VisualScripting.State.csproj",
+        "projectName": "Unity.VisualScripting.State",
+        "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.State.csproj",
+        "packagesPath": "/Users/mironcosmin/.nuget/packages/",
+        "outputPath": "/Users/mironcosmin/CFD/Temp/obj/Debug/Unity.VisualScripting.State/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mironcosmin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.Core.csproj"
+              },
+              "/Users/mironcosmin/CFD/Unity.VisualScripting.Flow.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/Unity.VisualScripting.Flow.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEditor.UI.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEditor.UI.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEngine.UI.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mironcosmin/CFD/UnityEditor.TestRunner.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mironcosmin/CFD/UnityEditor.TestRunner.csproj",
+        "projectName": "UnityEditor.TestRunner",
+        "projectPath": "/Users/mironcosmin/CFD/UnityEditor.TestRunner.csproj",
+        "packagesPath": "/Users/mironcosmin/.nuget/packages/",
+        "outputPath": "/Users/mironcosmin/CFD/Temp/obj/Debug/UnityEditor.TestRunner/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mironcosmin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/mironcosmin/CFD/UnityEngine.TestRunner.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEngine.TestRunner.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mironcosmin/CFD/UnityEditor.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mironcosmin/CFD/UnityEditor.UI.csproj",
+        "projectName": "UnityEditor.UI",
+        "projectPath": "/Users/mironcosmin/CFD/UnityEditor.UI.csproj",
+        "packagesPath": "/Users/mironcosmin/.nuget/packages/",
+        "outputPath": "/Users/mironcosmin/CFD/Temp/obj/Debug/UnityEditor.UI/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mironcosmin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {
+              "/Users/mironcosmin/CFD/UnityEditor.TestRunner.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEditor.TestRunner.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEngine.TestRunner.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEngine.TestRunner.csproj"
+              },
+              "/Users/mironcosmin/CFD/UnityEngine.UI.csproj": {
+                "projectPath": "/Users/mironcosmin/CFD/UnityEngine.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mironcosmin/CFD/UnityEngine.TestRunner.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mironcosmin/CFD/UnityEngine.TestRunner.csproj",
+        "projectName": "UnityEngine.TestRunner",
+        "projectPath": "/Users/mironcosmin/CFD/UnityEngine.TestRunner.csproj",
+        "packagesPath": "/Users/mironcosmin/.nuget/packages/",
+        "outputPath": "/Users/mironcosmin/CFD/Temp/obj/Debug/UnityEngine.TestRunner/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mironcosmin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/mironcosmin/CFD/UnityEngine.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/mironcosmin/CFD/UnityEngine.UI.csproj",
+        "projectName": "UnityEngine.UI",
+        "projectPath": "/Users/mironcosmin/CFD/UnityEngine.UI.csproj",
+        "packagesPath": "/Users/mironcosmin/.nuget/packages/",
+        "outputPath": "/Users/mironcosmin/CFD/Temp/obj/Debug/UnityEngine.UI/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/mironcosmin/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.405/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

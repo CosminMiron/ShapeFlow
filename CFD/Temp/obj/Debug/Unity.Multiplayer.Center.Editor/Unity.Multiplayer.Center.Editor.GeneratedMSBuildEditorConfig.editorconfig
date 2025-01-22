@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = Unity.Multiplayer.Center
+build_property.ProjectDir = /Users/mironcosmin/CFD/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
