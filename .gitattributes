@@ -14,7 +14,8 @@
 *.asset merge=unityyamlmerge eol=lf
 *.meta merge=unityyamlmerge eol=lf
 *.controller merge=unityyamlmerge eol=lf
-
+*.dylib merge=unityyamlmerge eol=lf
+*.so  merge=unityyamlmerge eol=lf
 
 ## git-lfs ##
 
