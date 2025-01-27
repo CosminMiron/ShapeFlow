@@ -329,3 +329,59 @@ Memory consumption went from 259.3 MB to 253.9 MB.
 Total: 6.825875 ms (FindLiveObjects: 0.339084 ms CreateObjectMapping: 0.193250 ms MarkObjects: 4.603291 ms  DeleteObjects: 1.689250 ms)
 
 Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 93.069502 seconds.
+  path: Assets/SportCar
+  artifactKey: Guid(bd2675847f210474582788ef050a150e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SportCar using Guid(bd2675847f210474582788ef050a150e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '59b997f5f3c1e8c615575b519e1481fe') in 0.00126325 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.488596 seconds.
+  path: Assets/SportCar/Scenes
+  artifactKey: Guid(3d65af9edff402449aa7632e8513a4da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SportCar/Scenes using Guid(3d65af9edff402449aa7632e8513a4da) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '921b231e97f4a20bef818671926e93c5') in 0.000404458 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.268752 seconds.
+  path: Assets/SportCar/Scenes/SportCar_Demo
+  artifactKey: Guid(8c449a3e9af884345a2cae5e7e0ac7e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SportCar/Scenes/SportCar_Demo using Guid(8c449a3e9af884345a2cae5e7e0ac7e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3dc145237f6f5e51ece17053a5fffee2') in 0.000347667 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.598479 seconds.
+  path: Assets/Urban American Assets
+  artifactKey: Guid(095ccf5722b5e4eacb5564de26a34f44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Urban American Assets using Guid(095ccf5722b5e4eacb5564de26a34f44) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e8e0f1c5a93674e8145413a41ffad2a8') in 0.00036225 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.979545 seconds.
+  path: Assets/Urban American Assets/Demo scenes
+  artifactKey: Guid(e0c67aef93cc01f498b8c6316e4262c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Urban American Assets/Demo scenes using Guid(e0c67aef93cc01f498b8c6316e4262c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd4156559dbff623f29fa1f98d9b26e09') in 0.000386375 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 16.779614 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(9c53962885c2c4f449125a979d6ad240) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(9c53962885c2c4f449125a979d6ad240) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd65b75f456837a3494a5e6e744543932') in 0.000450875 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.272755 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(e0c67aef93cc01f498b8c6316e4262c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(e0c67aef93cc01f498b8c6316e4262c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '576a27b2395a839705192bc38e0dd996') in 0.000362208 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
