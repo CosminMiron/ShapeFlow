@@ -15,16 +15,6 @@ public class VoxelizedData
     int yGridSize;
     int zGridSize;
 
-    Vector3Int[] faceOffsets = new Vector3Int[]
-{
-            new Vector3Int(1, 0, 0),  // Right
-            new Vector3Int(-1, 0, 0), // Left
-            new Vector3Int(0, 1, 0),  // Up
-            new Vector3Int(0, -1, 0), // Down
-            new Vector3Int(0, 0, 1),  // Forward
-            new Vector3Int(0, 0, -1)  // Backward
-};
-
     public VoxelizedData(List<Vector3Int> gridPoints, HashSet<Vector3Int> hash, float halfSize, int x, int y, int z)
     {
         GridPoints = gridPoints;
