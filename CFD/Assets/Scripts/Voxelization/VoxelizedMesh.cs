@@ -9,7 +9,7 @@ public class VoxelizedMesh : MonoBehaviour
     public Vector3 LocalOrigin;
     public MeshFilter MeshFilter;
     public bool _showGrid;
-    public Vector3Int forward = new Vector3Int(0,0,1);
+    public Vector3Int forward = new Vector3Int(0, 0, 1);
 
     private HashSet<Vector3Int> hash = new HashSet<Vector3Int>();
 
@@ -34,10 +34,10 @@ public class VoxelizedMesh : MonoBehaviour
                 Gizmos.color = Color.red;
             }
 
-            //  if (gridPoint.y == 25 ||gridPoint.y == 24 ||gridPoint.y == 23 || gridPoint.y == 22 || gridPoint.y == 21|| gridPoint.y == 28 || gridPoint.y == 29|| gridPoint.y == 26|| gridPoint.y == 27)
-            // {
-            //     Gizmos.color = Color.blue;
-            // }
+            if (!(hash.Contains(gridPoint + forward) || !hash.Contains(gridPoint + forward * -1)) && (hash.Contains(gridPoint + forward + new Vector3Int(0, 1, 0)) || hash.Contains(gridPoint + forward + new Vector3Int(0, -1, 0)) || hash.Contains(gridPoint + forward + new Vector3Int(1, 0, 0)) || hash.Contains(gridPoint + forward + new Vector3Int(-1, 0, 0))))
+            {
+                Gizmos.color = Color.blue;
+            }
 
             Vector3 worldPos = PointToPosition(gridPoint);
             Gizmos.DrawWireCube(worldPos, new Vector3(size, size, size));
@@ -53,9 +53,8 @@ public class VoxelizedMesh : MonoBehaviour
     }
 
     [ContextMenu("Voxelize")]
-    public VoxelizedData Voxelize2()
+    public VoxelizedData Voxelize()
     {
-        //VoxelizeMesh(MeshFilter);
         GridPoints.Clear();
         CPUVoxelizer.Voxelize(MeshFilter.sharedMesh, 100, out var ceva, out var unit, out var x, out var y, out var z);
 
@@ -74,93 +73,13 @@ public class VoxelizedMesh : MonoBehaviour
         LocalOrigin = transform.InverseTransformPoint(minExtents);
         var ceva2 = new VoxelizedData(GridPoints, hash, HalfSize, x, y, z);
 
-        Debug.LogError("DF  " +ceva2.CalculateObjectDragForce(forward));
+        Debug.LogError("DF  " + ceva2.CalculateObjectDragForce(forward, 30, 1.2f));
         var result = ceva2.CalculateFrontalArea();
-        Debug.LogError("FA  " +result);
+        Debug.LogError("FA  " + result);
 
-        Debug.LogError("DC  " + ceva2.CalculateDragCoefficient(forward));
+        Debug.LogError("DC  " + ceva2.CalculateDragCoefficient(forward, 30, 1.2f));
 
         return ceva2;
 
-    }
-
-    public VoxelizedData VoxelizeMesh(MeshFilter meshFilter)
-    {
-        if (!meshFilter.TryGetComponent(out MeshCollider meshCollider))
-        {
-            meshCollider = meshFilter.gameObject.AddComponent<MeshCollider>();
-        }
-
-        Bounds bounds = meshCollider.bounds;
-        Vector3 minExtents = bounds.center - bounds.extents;
-        Vector3 count = bounds.extents / HalfSize;
-
-        int xGridSize = Mathf.CeilToInt(count.x);
-        int yGridSize = Mathf.CeilToInt(count.y);
-        int zGridSize = Mathf.CeilToInt(count.z);
-
-        GridPoints.Clear();
-        hash.Clear();
-        LocalOrigin = transform.InverseTransformPoint(minExtents);
-
-        for (int x = 0; x < xGridSize; ++x)
-        {
-            for (int z = 0; z < zGridSize; ++z)
-            {
-                for (int y = 0; y < yGridSize; ++y)
-                {
-                    Vector3 pos = PointToPosition(new Vector3Int(x, y, z));
-                    if (Physics.CheckBox(pos, new Vector3(HalfSize, HalfSize, HalfSize)))
-                    {
-                        GridPoints.Add(new Vector3Int(x, y, z));
-                        hash.Add(new Vector3Int(x, y, z));
-                    }
-                }
-            }
-        }
-
-        Vector3Int[] faceOffsets = new Vector3Int[]
-{
-            new Vector3Int(1, 0, 0),  // Right
-            new Vector3Int(-1, 0, 0), // Left
-            new Vector3Int(0, 1, 0),  // Up
-            new Vector3Int(0, -1, 0), // Down
-            new Vector3Int(0, 0, 1),  // Forward
-            new Vector3Int(0, 0, -1)  // Backward
-};
-
-        var gridWithLessNegh = new List<Vector3Int>();
-
-        foreach (var item in GridPoints)
-        {
-            int neighborCount = 0;
-            foreach (Vector3Int offset in faceOffsets)
-            {
-                Vector3Int neighborPosition = item + offset;
-                if (hash.Contains(neighborPosition))
-                {
-                    neighborCount++;
-                }
-            }
-
-            if (neighborCount == 6)
-            {
-                continue;
-            }
-
-            gridWithLessNegh.Add(item);
-        }
-
-        GridPoints = gridWithLessNegh;
-
-        var ceva = new VoxelizedData(GridPoints, hash, HalfSize, xGridSize, yGridSize, zGridSize);
-
-        Debug.LogError(ceva.CalculateObjectDragForce(forward));
-        var result = ceva.CalculateFrontalArea();
-        Debug.LogError(result);
-
-        Debug.LogError(ceva.CalculateDragCoefficient(forward));
-
-        return ceva;
     }
 }

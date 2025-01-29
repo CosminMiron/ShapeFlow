@@ -7,9 +7,6 @@ public class VoxelizedData
     private HashSet<Vector3Int> hash = new HashSet<Vector3Int>();
 
     private float _halfSize;
-    private Vector3 LocalOrigin;
-    private float density = 1.2f;
-    private float speed = 10;
 
     int xGridSize;
     int yGridSize;
@@ -28,7 +25,7 @@ public class VoxelizedData
         zGridSize = z;
     }
 
-    public float  CalculateFrontalArea()
+    public float CalculateFrontalArea()
     {
         var ceva = new bool[xGridSize, yGridSize, zGridSize];
 
@@ -72,15 +69,15 @@ public class VoxelizedData
             }
         }
 
-        return  area;
+        return area;
     }
 
-    public float CalculateObjectDragForce(Vector3Int forward)
+    public float CalculateObjectDragForce(Vector3Int forward, float speed, float airDensity)
     {
         var force = 0f;
         foreach (var point in _gridPoints)
         {
-            force += 0.5f * density * (speed * speed) * CalculatePointDragForce(point, forward) * (_halfSize * 2) * (_halfSize * 2);
+            force += 0.5f * airDensity * (speed * speed) * CalculatePointDragForce(point, forward) * (_halfSize * 2) * (_halfSize * 2);
         }
 
         return force;
@@ -88,20 +85,25 @@ public class VoxelizedData
 
     public float CalculatePointDragForce(Vector3Int position, Vector3Int forward)
     {
-        if (!hash.Contains(position + forward) && hash.Contains(position + forward * -1))
+        if (hash.Contains(position + forward) || !hash.Contains(position + forward * -1))
         {
-            return 0.2f;
+            return 0f;
         }
 
-        return 0f;
+        if (hash.Contains(position + forward + new Vector3Int(0, 1, 0)) || hash.Contains(position + forward + new Vector3Int(0, -1, 0)) || hash.Contains(position + forward + new Vector3Int(1, 0, 0)) || hash.Contains(position + forward + new Vector3Int(-1, 0, 0)))
+        {
+            return 0.05f;
+        }
+
+        return 0.2f;
     }
 
-    public float CalculateDragCoefficient(Vector3Int forward)
+    public float CalculateDragCoefficient(Vector3Int forward, float speed, float airDensity)
     {
-        var df = CalculateObjectDragForce(forward);
+        var df = CalculateObjectDragForce(forward, speed, airDensity);
         var area = CalculateFrontalArea();
 
-        return (2 * df)/ (density * (speed * speed) * area);
+        return (2 * df) / (airDensity * (speed * speed) * area);
     }
 
 }

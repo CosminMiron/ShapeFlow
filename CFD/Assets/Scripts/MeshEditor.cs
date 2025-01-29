@@ -13,19 +13,13 @@ public class MeshEditor : MonoBehaviour
     [ContextMenu("Ceva")]
     private void Ceva()
     {
-        var data = _voxelizedMesh.Voxelize2();
+        var data = _voxelizedMesh.Voxelize();
 
         var halfSize = data.HalfSize * 2f;
         _meshFilter.sharedMesh.RecalculateBounds();
 
-
         var vertices = _meshFilter.mesh.vertices;
-        var uvs = _meshFilter.mesh.uv;
-        var uv00 = Vector2.zero;
-        var indices = _meshFilter.mesh.triangles;
-        var direction = Vector3.forward;
         var mbounds = _meshFilter.mesh.bounds;
-        float maxLength = Mathf.Max(mbounds.size.x, Mathf.Max(mbounds.size.y, mbounds.size.z));
         var unit = halfSize;
         var hunit = unit * 0.5f;
         var voxelSize = Vector3.one * unit;
