@@ -34,11 +34,6 @@ public class VoxelizedMesh : MonoBehaviour
                 Gizmos.color = Color.red;
             }
 
-            if (!(hash.Contains(gridPoint + forward) || !hash.Contains(gridPoint + forward * -1)) && (hash.Contains(gridPoint + forward + new Vector3Int(0, 1, 0)) || hash.Contains(gridPoint + forward + new Vector3Int(0, -1, 0)) || hash.Contains(gridPoint + forward + new Vector3Int(1, 0, 0)) || hash.Contains(gridPoint + forward + new Vector3Int(-1, 0, 0))))
-            {
-                Gizmos.color = Color.blue;
-            }
-
             Vector3 worldPos = PointToPosition(gridPoint);
             Gizmos.DrawWireCube(worldPos, new Vector3(size, size, size));
         }

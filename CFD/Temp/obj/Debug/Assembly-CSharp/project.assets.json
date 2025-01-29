@@ -166,6 +166,57 @@
           "bin/placeholder/Unity.Burst.Editor.dll": {}
         }
       },
+      "Unity.Cinemachine/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Unity.InputSystem": "1.0.0",
+          "Unity.Mathematics": "1.0.0",
+          "Unity.Postprocessing.Runtime": "1.0.0",
+          "Unity.RenderPipelines.Core.Runtime": "1.0.0",
+          "Unity.RenderPipelines.Universal.2D.Runtime": "1.0.0",
+          "Unity.RenderPipelines.Universal.Runtime": "1.0.0",
+          "Unity.Splines": "1.0.0",
+          "Unity.Timeline": "1.0.0",
+          "UnityEditor.UI": "1.0.0",
+          "UnityEngine.UI": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Unity.Cinemachine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Unity.Cinemachine.dll": {}
+        }
+      },
+      "Unity.Cinemachine.Editor/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Unity.Cinemachine": "1.0.0",
+          "Unity.InputSystem": "1.0.0",
+          "Unity.Mathematics": "1.0.0",
+          "Unity.Postprocessing.Editor": "1.0.0",
+          "Unity.Postprocessing.Runtime": "1.0.0",
+          "Unity.RenderPipelines.Core.Editor": "1.0.0",
+          "Unity.RenderPipelines.Core.Runtime": "1.0.0",
+          "Unity.RenderPipelines.Universal.Editor": "1.0.0",
+          "Unity.RenderPipelines.Universal.Runtime": "1.0.0",
+          "Unity.Splines": "1.0.0",
+          "Unity.Splines.Editor": "1.0.0",
+          "Unity.Timeline": "1.0.0",
+          "Unity.Timeline.Editor": "1.0.0",
+          "UnityEditor.TestRunner": "1.0.0",
+          "UnityEditor.UI": "1.0.0",
+          "UnityEngine.TestRunner": "1.0.0",
+          "UnityEngine.UI": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Unity.Cinemachine.Editor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Unity.Cinemachine.Editor.dll": {}
+        }
+      },
       "Unity.Collections/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -632,6 +683,22 @@
           "bin/placeholder/Unity.Searcher.Editor.dll": {}
         }
       },
+      "Unity.Settings.Editor/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "UnityEditor.TestRunner": "1.0.0",
+          "UnityEditor.UI": "1.0.0",
+          "UnityEngine.TestRunner": "1.0.0",
+          "UnityEngine.UI": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Unity.Settings.Editor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Unity.Settings.Editor.dll": {}
+        }
+      },
       "Unity.ShaderGraph.Editor/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
@@ -666,6 +733,41 @@
         },
         "runtime": {
           "bin/placeholder/Unity.ShaderGraph.Utilities.dll": {}
+        }
+      },
+      "Unity.Splines/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Unity.Burst": "1.0.0",
+          "Unity.Mathematics": "1.0.0",
+          "UnityEditor.UI": "1.0.0",
+          "UnityEngine.UI": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Unity.Splines.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Unity.Splines.dll": {}
+        }
+      },
+      "Unity.Splines.Editor/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "Unity.Mathematics": "1.0.0",
+          "Unity.Settings.Editor": "1.0.0",
+          "Unity.Splines": "1.0.0",
+          "UnityEditor.TestRunner": "1.0.0",
+          "UnityEditor.UI": "1.0.0",
+          "UnityEngine.TestRunner": "1.0.0",
+          "UnityEngine.UI": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Unity.Splines.Editor.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Unity.Splines.Editor.dll": {}
         }
       },
       "Unity.TextMeshPro/1.0.0": {
@@ -996,6 +1098,16 @@
       "path": "Unity.Burst.Editor.csproj",
       "msbuildProject": "Unity.Burst.Editor.csproj"
     },
+    "Unity.Cinemachine/1.0.0": {
+      "type": "project",
+      "path": "Unity.Cinemachine.csproj",
+      "msbuildProject": "Unity.Cinemachine.csproj"
+    },
+    "Unity.Cinemachine.Editor/1.0.0": {
+      "type": "project",
+      "path": "Unity.Cinemachine.Editor.csproj",
+      "msbuildProject": "Unity.Cinemachine.Editor.csproj"
+    },
     "Unity.Collections/1.0.0": {
       "type": "project",
       "path": "Unity.Collections.csproj",
@@ -1136,6 +1248,11 @@
       "path": "Unity.Searcher.Editor.csproj",
       "msbuildProject": "Unity.Searcher.Editor.csproj"
     },
+    "Unity.Settings.Editor/1.0.0": {
+      "type": "project",
+      "path": "Unity.Settings.Editor.csproj",
+      "msbuildProject": "Unity.Settings.Editor.csproj"
+    },
     "Unity.ShaderGraph.Editor/1.0.0": {
       "type": "project",
       "path": "Unity.ShaderGraph.Editor.csproj",
@@ -1145,6 +1262,16 @@
       "type": "project",
       "path": "Unity.ShaderGraph.Utilities.csproj",
       "msbuildProject": "Unity.ShaderGraph.Utilities.csproj"
+    },
+    "Unity.Splines/1.0.0": {
+      "type": "project",
+      "path": "Unity.Splines.csproj",
+      "msbuildProject": "Unity.Splines.csproj"
+    },
+    "Unity.Splines.Editor/1.0.0": {
+      "type": "project",
+      "path": "Unity.Splines.Editor.csproj",
+      "msbuildProject": "Unity.Splines.Editor.csproj"
     },
     "Unity.TextMeshPro/1.0.0": {
       "type": "project",
@@ -1244,6 +1371,8 @@
       "Unity.AI.Navigation.Updater >= 1.0.0",
       "Unity.Burst >= 1.0.0",
       "Unity.Burst.Editor >= 1.0.0",
+      "Unity.Cinemachine >= 1.0.0",
+      "Unity.Cinemachine.Editor >= 1.0.0",
       "Unity.Collections >= 1.0.0",
       "Unity.Collections.Editor >= 1.0.0",
       "Unity.InputSystem >= 1.0.0",
@@ -1273,6 +1402,8 @@
       "Unity.Rider.Editor >= 1.0.0",
       "Unity.Searcher.Editor >= 1.0.0",
       "Unity.ShaderGraph.Editor >= 1.0.0",
+      "Unity.Splines >= 1.0.0",
+      "Unity.Splines.Editor >= 1.0.0",
       "Unity.TextMeshPro >= 1.0.0",
       "Unity.TextMeshPro.Editor >= 1.0.0",
       "Unity.Timeline >= 1.0.0",
@@ -1344,6 +1475,12 @@
             },
             "/Users/mironcosmin/ShapeFlow/CFD/Unity.Burst.Editor.csproj": {
               "projectPath": "/Users/mironcosmin/ShapeFlow/CFD/Unity.Burst.Editor.csproj"
+            },
+            "/Users/mironcosmin/ShapeFlow/CFD/Unity.Cinemachine.csproj": {
+              "projectPath": "/Users/mironcosmin/ShapeFlow/CFD/Unity.Cinemachine.csproj"
+            },
+            "/Users/mironcosmin/ShapeFlow/CFD/Unity.Cinemachine.Editor.csproj": {
+              "projectPath": "/Users/mironcosmin/ShapeFlow/CFD/Unity.Cinemachine.Editor.csproj"
             },
             "/Users/mironcosmin/ShapeFlow/CFD/Unity.Collections.csproj": {
               "projectPath": "/Users/mironcosmin/ShapeFlow/CFD/Unity.Collections.csproj"
@@ -1431,6 +1568,12 @@
             },
             "/Users/mironcosmin/ShapeFlow/CFD/Unity.ShaderGraph.Editor.csproj": {
               "projectPath": "/Users/mironcosmin/ShapeFlow/CFD/Unity.ShaderGraph.Editor.csproj"
+            },
+            "/Users/mironcosmin/ShapeFlow/CFD/Unity.Splines.csproj": {
+              "projectPath": "/Users/mironcosmin/ShapeFlow/CFD/Unity.Splines.csproj"
+            },
+            "/Users/mironcosmin/ShapeFlow/CFD/Unity.Splines.Editor.csproj": {
+              "projectPath": "/Users/mironcosmin/ShapeFlow/CFD/Unity.Splines.Editor.csproj"
             },
             "/Users/mironcosmin/ShapeFlow/CFD/Unity.TextMeshPro.csproj": {
               "projectPath": "/Users/mironcosmin/ShapeFlow/CFD/Unity.TextMeshPro.csproj"
