@@ -4,7 +4,7 @@ using UnityEngine;
 public class VoxelizedData
 {
     List<Vector3Int> _gridPoints = new List<Vector3Int>();
-    private HashSet<Vector3Int> hash = new HashSet<Vector3Int>();
+    private HashSet<Vector3Int> _hash = new HashSet<Vector3Int>();
 
     private float _halfSize;
 
@@ -18,7 +18,7 @@ public class VoxelizedData
     public VoxelizedData(List<Vector3Int> gridPoints, HashSet<Vector3Int> hash, float halfSize, int x, int y, int z)
     {
         _gridPoints = gridPoints;
-        this.hash = hash;
+        _hash = hash;
         _halfSize = halfSize;
         xGridSize = x;
         yGridSize = y;
@@ -45,7 +45,7 @@ public class VoxelizedData
             {
                 for (int z = 0; z < zGridSize; z++)
                 {
-                    if (!hash.Contains(new Vector3Int(x, y, z))) continue;
+                    if (!_hash.Contains(new Vector3Int(x, y, z))) continue;
 
                     ceva[x, y, z] = true;
                 }
@@ -85,12 +85,12 @@ public class VoxelizedData
 
     public float CalculatePointDragForce(Vector3Int position, Vector3Int forward)
     {
-        if (hash.Contains(position + forward) || !hash.Contains(position + forward * -1))
+        if (_hash.Contains(position + forward) || !_hash.Contains(position + forward * -1))
         {
             return 0f;
         }
 
-        if (hash.Contains(position + forward + new Vector3Int(0, 1, 0)) || hash.Contains(position + forward + new Vector3Int(0, -1, 0)) || hash.Contains(position + forward + new Vector3Int(1, 0, 0)) || hash.Contains(position + forward + new Vector3Int(-1, 0, 0)))
+        if (_hash.Contains(position + forward + new Vector3Int(0, 1, 0)) || _hash.Contains(position + forward + new Vector3Int(0, -1, 0)) || _hash.Contains(position + forward + new Vector3Int(1, 0, 0)) || _hash.Contains(position + forward + new Vector3Int(-1, 0, 0)))
         {
             return 0.05f;
         }
@@ -98,7 +98,7 @@ public class VoxelizedData
         return 0.2f;
     }
 
-    public float CalculateDragCoefficient(Vector3Int forward, float speed, float airDensity)
+    public float CalculateDragCoefficient(Vector3Int forward, float speed = 10f, float airDensity = 1.2f)
     {
         var df = CalculateObjectDragForce(forward, speed, airDensity);
         var area = CalculateFrontalArea();
@@ -106,4 +106,19 @@ public class VoxelizedData
         return (2 * df) / (airDensity * (speed * speed) * area);
     }
 
+    public void RemovePoint(Vector3Int point)
+    {
+        if (!_hash.Contains(point)) return;
+
+        _gridPoints.Remove(point);
+        _hash.Remove(point);
+    }
+
+    public void AddPoint(Vector3Int point)
+    {
+        if (!_hash.Contains(point)) return;
+
+        _gridPoints.Add(point);
+        _hash.Add(point);
+    }
 }
