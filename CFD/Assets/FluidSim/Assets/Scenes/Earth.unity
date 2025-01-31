@@ -30512,20 +30512,20 @@ MonoBehaviour:
   useEarthSDF: 1
   sdfLoader: {fileID: 1282462508}
   terrainCreator: {fileID: 0}
-  sdfCollisionSkin: 0
+  sdfCollisionSkin: 0.05
   normalTimeScale: 1
   slowTimeScale: 0.1
   maxTimestepFPS: 60
   iterationsPerFrame: 3
   smoothingRadius: 0.2
-  targetDensity: 61.5
-  pressureMultiplier: 8.3
+  targetDensity: 75.3
+  pressureMultiplier: 21.4
   nearPressureMultiplier: 2.16
-  viscosityStrength: 0
+  viscosityStrength: 0.05
   collisionDamping: 1
   foamActive: 0
   maxFoamParticleCount: 1280000
-  trappedAirSpawnRate: 600
+  trappedAirSpawnRate: 1153.2
   spawnRateFadeInTime: 1
   spawnRateFadeStartTime: 4
   trappedAirVelocityMinMax: {x: 8, y: 15}
@@ -30549,7 +30549,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.31, y: 0.75, z: 0}
-  m_LocalScale: {x: 3.61, y: 2.5, z: 10}
+  m_LocalScale: {x: 1.79, y: 2.5, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -61092,7 +61092,7 @@ MonoBehaviour:
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   gradientResolution: 50
-  velocityDisplayMax: 2
+  velocityDisplayMax: 1
   meshResolution: 3
   sim: {fileID: 647353484}
   shaderShaded: {fileID: 4800000, guid: 638bb1bdb9b8e374e8a5cbcd595e3973, type: 3}
