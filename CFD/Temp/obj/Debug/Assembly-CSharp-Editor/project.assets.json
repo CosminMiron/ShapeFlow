@@ -9,6 +9,11 @@
           "AwesomeChart": "1.0.0",
           "GraphAndChart": "1.0.0",
           "PPv2URPConverters": "1.0.0",
+          "UniTask": "1.0.0",
+          "UniTask.Addressables": "1.0.0",
+          "UniTask.DOTween": "1.0.0",
+          "UniTask.Linq": "1.0.0",
+          "UniTask.TextMeshPro": "1.0.0",
           "Unity.2D.Sprite.Editor": "1.0.0",
           "Unity.AI.Navigation": "1.0.0",
           "Unity.AI.Navigation.Editor": "1.0.0",
@@ -120,6 +125,81 @@
         },
         "runtime": {
           "bin/placeholder/PPv2URPConverters.dll": {}
+        }
+      },
+      "UniTask/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "UnityEditor.UI": "1.0.0",
+          "UnityEngine.UI": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UniTask.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UniTask.dll": {}
+        }
+      },
+      "UniTask.Addressables/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "UniTask": "1.0.0",
+          "UnityEditor.UI": "1.0.0",
+          "UnityEngine.UI": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UniTask.Addressables.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UniTask.Addressables.dll": {}
+        }
+      },
+      "UniTask.DOTween/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "UniTask": "1.0.0",
+          "UnityEditor.UI": "1.0.0",
+          "UnityEngine.UI": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UniTask.DOTween.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UniTask.DOTween.dll": {}
+        }
+      },
+      "UniTask.Linq/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "UniTask": "1.0.0",
+          "UnityEditor.UI": "1.0.0",
+          "UnityEngine.UI": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UniTask.Linq.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UniTask.Linq.dll": {}
+        }
+      },
+      "UniTask.TextMeshPro/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.1",
+        "dependencies": {
+          "UniTask": "1.0.0",
+          "Unity.TextMeshPro": "1.0.0",
+          "UnityEditor.UI": "1.0.0",
+          "UnityEngine.UI": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UniTask.TextMeshPro.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UniTask.TextMeshPro.dll": {}
         }
       },
       "Unity.2D.Sprite.Editor/1.0.0": {
@@ -1138,6 +1218,31 @@
       "path": "PPv2URPConverters.csproj",
       "msbuildProject": "PPv2URPConverters.csproj"
     },
+    "UniTask/1.0.0": {
+      "type": "project",
+      "path": "UniTask.csproj",
+      "msbuildProject": "UniTask.csproj"
+    },
+    "UniTask.Addressables/1.0.0": {
+      "type": "project",
+      "path": "UniTask.Addressables.csproj",
+      "msbuildProject": "UniTask.Addressables.csproj"
+    },
+    "UniTask.DOTween/1.0.0": {
+      "type": "project",
+      "path": "UniTask.DOTween.csproj",
+      "msbuildProject": "UniTask.DOTween.csproj"
+    },
+    "UniTask.Linq/1.0.0": {
+      "type": "project",
+      "path": "UniTask.Linq.csproj",
+      "msbuildProject": "UniTask.Linq.csproj"
+    },
+    "UniTask.TextMeshPro/1.0.0": {
+      "type": "project",
+      "path": "UniTask.TextMeshPro.csproj",
+      "msbuildProject": "UniTask.TextMeshPro.csproj"
+    },
     "Unity.2D.Sprite.Editor/1.0.0": {
       "type": "project",
       "path": "Unity.2D.Sprite.Editor.csproj",
@@ -1440,6 +1545,11 @@
       "AwesomeChart >= 1.0.0",
       "GraphAndChart >= 1.0.0",
       "PPv2URPConverters >= 1.0.0",
+      "UniTask >= 1.0.0",
+      "UniTask.Addressables >= 1.0.0",
+      "UniTask.DOTween >= 1.0.0",
+      "UniTask.Linq >= 1.0.0",
+      "UniTask.TextMeshPro >= 1.0.0",
       "Unity.2D.Sprite.Editor >= 1.0.0",
       "Unity.AI.Navigation >= 1.0.0",
       "Unity.AI.Navigation.Editor >= 1.0.0",
@@ -1535,6 +1645,21 @@
             },
             "/Users/mironcosmin/ShapeFlow/CFD/PPv2URPConverters.csproj": {
               "projectPath": "/Users/mironcosmin/ShapeFlow/CFD/PPv2URPConverters.csproj"
+            },
+            "/Users/mironcosmin/ShapeFlow/CFD/UniTask.Addressables.csproj": {
+              "projectPath": "/Users/mironcosmin/ShapeFlow/CFD/UniTask.Addressables.csproj"
+            },
+            "/Users/mironcosmin/ShapeFlow/CFD/UniTask.csproj": {
+              "projectPath": "/Users/mironcosmin/ShapeFlow/CFD/UniTask.csproj"
+            },
+            "/Users/mironcosmin/ShapeFlow/CFD/UniTask.DOTween.csproj": {
+              "projectPath": "/Users/mironcosmin/ShapeFlow/CFD/UniTask.DOTween.csproj"
+            },
+            "/Users/mironcosmin/ShapeFlow/CFD/UniTask.Linq.csproj": {
+              "projectPath": "/Users/mironcosmin/ShapeFlow/CFD/UniTask.Linq.csproj"
+            },
+            "/Users/mironcosmin/ShapeFlow/CFD/UniTask.TextMeshPro.csproj": {
+              "projectPath": "/Users/mironcosmin/ShapeFlow/CFD/UniTask.TextMeshPro.csproj"
             },
             "/Users/mironcosmin/ShapeFlow/CFD/Unity.2D.Sprite.Editor.csproj": {
               "projectPath": "/Users/mironcosmin/ShapeFlow/CFD/Unity.2D.Sprite.Editor.csproj"

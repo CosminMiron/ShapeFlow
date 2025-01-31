@@ -8,6 +8,14 @@
     "/Users/mironcosmin/ShapeFlow/CFD/Packages/packages-lock.json"
   ],
   "outputs": {
+    "com.cysharp.unitask@https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask": {
+      "name": "com.cysharp.unitask",
+      "resolvedPath": "/Users/mironcosmin/ShapeFlow/CFD/Library/PackageCache/com.cysharp.unitask",
+      "fingerprint": "1d3a06e7d071e9d41bd2d08d6b9f121d0c0349b2",
+      "editorCompatibility": "2018.4.0a1",
+      "version": "2.5.10",
+      "source": "git"
+    },
     "com.unity.2d.sprite@1.0.0": {
       "name": "com.unity.2d.sprite",
       "resolvedPath": "/Users/mironcosmin/ShapeFlow/CFD/Library/PackageCache/com.unity.2d.sprite",
