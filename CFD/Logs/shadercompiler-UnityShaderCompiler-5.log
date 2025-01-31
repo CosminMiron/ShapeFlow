@@ -28,3 +28,5 @@ Cmd: compileSnippet
   error: 1 plat 14 at Assets/FluidSim/Assets/Scripts/Rendering/Raymarch/Raymarching.shader(540): use of potentially uninitialized variable (SampleEnvironment)
  ok=1 outsize=132025
 
+Cmd: initializeCompiler
+

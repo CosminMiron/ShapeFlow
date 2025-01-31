@@ -476,6 +476,8 @@
 "Assets/AO/Scripts/Editor/GlobalFluidWindow.cs"
 "Assets/AO/Scripts/Editor/PIDDrawer.cs"
 "Assets/AO/Scripts/Editor/RingVortexEditor.cs"
+"Assets/Modern UI Pack/Editor/Scripts/ContextMenu.cs"
+"Assets/Modern UI Pack/Editor/Scripts/InitMUIP.cs"
 "Assets/Scripts/Voxelization/Editor/VoxelizedMeshEditor.cs"
 "Assets/Scripts/Voxelization/Editor/VoxelizeUtils.cs"
 "Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs"
