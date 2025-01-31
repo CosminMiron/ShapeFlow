@@ -137,11 +137,6 @@ public class GravitySim : MonoBehaviour
 				}
 			}
 		}
-
-		for (int i = 0; i < bodies.Length; i++)
-		{
-			bodyDisplays[i].pathRenderer.enabled = pred;
-		}
 	}
 
 	bool Impact(Span<Body> bodies)

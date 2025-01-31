@@ -20,6 +20,7 @@ namespace Seb.Fluid.Simulation
 		public LoadSDF sdfLoader;
 		public TerrainCreator terrainCreator;
 		public float sdfCollisionSkin;
+		public Transform car;
 
 
 		[Header("Time Step")] public float normalTimeScale = 1;
@@ -415,8 +416,7 @@ namespace Seb.Fluid.Simulation
 			}
 			else
 			{
-				Transform body0 = gravitySim.PlanetDisplay.body;
-				compute.SetMatrix("planetWorldToLocal", body0.worldToLocalMatrix);
+				compute.SetMatrix("planetWorldToLocal", car.worldToLocalMatrix);
 			}
 		}
 
