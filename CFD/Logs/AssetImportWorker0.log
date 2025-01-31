@@ -5131,3 +5131,19 @@ Memory consumption went from 273.7 MB to 264.4 MB.
 Total: 8.094833 ms (FindLiveObjects: 0.347958 ms CreateObjectMapping: 0.187625 ms MarkObjects: 4.132166 ms  DeleteObjects: 3.426708 ms)
 
 Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 105.220730 seconds.
+  path: Assets/Scenes/Paint booth.unity
+  artifactKey: Guid(be3984f7b0d57c94789a2f52a29f9a6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Paint booth.unity using Guid(be3984f7b0d57c94789a2f52a29f9a6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a7004fdc37caf38b010d154d94aa45ce') in 0.004826416 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.074515 seconds.
+  path: Assets/Scenes/Demo1.unity
+  artifactKey: Guid(be3984f7b0d57c94789a2f52a29f9a6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Demo1.unity using Guid(be3984f7b0d57c94789a2f52a29f9a6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '34455f2ce9c3bf404d0afd162b5673b3') in 0.000393542 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
