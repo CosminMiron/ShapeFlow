@@ -1,55 +1,63 @@
-using Unity.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace CFD.GA
+namespace CFD.GAS
 {
-    public class VoxelGrid
+    public class VoxelGrid : MonoBehaviour
     {
-        private NativeArray<int> grid;
-        private int sizeX, sizeY, sizeZ;
-        public VoxelGrid(int sizeX, int sizeY, int sizeZ)
+        public static VoxelGrid Instance { get; private set; }
+        private HashSet<Vector3Int> activeVoxels = new HashSet<Vector3Int>();
+        private void Awake()
         {
-            this.sizeX = sizeX;
-            this.sizeY = sizeY;
-            this.sizeZ = sizeZ;
-            grid = new NativeArray<int>(sizeX * sizeY * sizeZ, Allocator.Persistent);
+            if (Instance == null)
+                Instance = this;
+            else
+                Destroy(gameObject);
         }
-        public int GetIndex(int x, int y, int z)
+        /*public void ApplyVoxelActions(List<VoxelAction> actions)
         {
-            return x + y * sizeX + z * sizeX * sizeY;
-        }
-        public NativeHashSet<Vector3Int> GetExteriorVoxels()
-        {
-            NativeHashSet<Vector3Int> exteriorVoxels = new NativeHashSet<Vector3Int>(0, Allocator.TempJob);
-            Vector3Int[] directions = { Vector3Int.right, Vector3Int.left, Vector3Int.up, Vector3Int.down, Vector3Int.forward, Vector3Int.back };
-            for (int x = 0; x < sizeX; x++)
+            foreach (var action in actions)
             {
-                for (int y = 0; y < sizeY; y++)
-                {
-                    for (int z = 0; z < sizeZ; z++)
-                    {
-                        int index = GetIndex(x, y, z);
-                        if (grid[index] == 1)
-                        {
-                            foreach (var dir in directions)
-                            {
-                                int nx = x + dir.x, ny = y + dir.y, nz = z + dir.z;
-                                if (nx < 0 || ny < 0 || nz < 0 || nx >= sizeX || ny >= sizeY || nz >= sizeZ ||
-                                    grid[GetIndex(nx, ny, nz)] == 0)
-                                {
-                                    exteriorVoxels.Add(new Vector3Int(x, y, z));
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
+                if (action.isExtend)
+                    AddVoxel(action.position + action.direction);
+                else
+                    RemoveVoxel(action.position);
+            }
+        }*/
+        public void AddVoxel(Vector3Int position)
+        {
+            activeVoxels.Add(position);
+        }
+        public void RemoveVoxel(Vector3Int position)
+        {
+            activeVoxels.Remove(position);
+        }
+        public bool IsVoxelPresent(Vector3Int position)
+        {
+            return activeVoxels.Contains(position);
+        }
+        public HashSet<Vector3Int> GetExteriorVoxels()
+        {
+            HashSet<Vector3Int> exteriorVoxels = new HashSet<Vector3Int>();
+            foreach (var voxel in activeVoxels)
+            {
+                if (IsExterior(voxel))
+                    exteriorVoxels.Add(voxel);
             }
             return exteriorVoxels;
         }
-        public void Dispose()
+        private bool IsExterior(Vector3Int position)
         {
-            if (grid.IsCreated) grid.Dispose();
+            Vector3Int[] neighbors =
+            {
+           Vector3Int.up, Vector3Int.down, Vector3Int.left, Vector3Int.right, Vector3Int.forward, Vector3Int.back
+       };
+            foreach (var offset in neighbors)
+            {
+                if (!activeVoxels.Contains(position + offset))
+                    return true; // If any side is exposed, it's an exterior voxel
+            }
+            return false;
         }
     }
 }

@@ -1,86 +1,112 @@
-using Unity.Collections;
-using Unity.Jobs;
+using CFD.GA;
+using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.InputSystem.HID.HID;
 
-namespace CFD.GA
+namespace CFD.GAS
 {
     public class GeneticAlgorithm : MonoBehaviour
     {
-        public int populationSize = 50;
+        [SerializeField] private VoxelizedMesh _voxelizedMesh;
+        public int populationSize = 10;
+        public int maxActionsPerIndividual = 20;
         public float mutationRate = 0.1f;
         public int generations = 100;
-        public int sizeX = 32, sizeY = 32, sizeZ = 32;
-        public int maxActionsPerIndividual;
-        private NativeArray<VoxelStructure> offspring;
-        private NativeArray<float> fitnessValues;
-        private VoxelGrid voxelGrid;
-        private void Start()
+        private List<VoxelStructure> population;
+        private HashSet<Vector3Int> exteriorVoxels;
+        private VoxelizedData _voxelizedData;
+
+        [ContextMenu("Start GA")]
+        private void StartGA()
         {
+            _voxelizedData = _voxelizedMesh.VoxelizedData;
             InitializePopulation();
-            RunEvolution();
+            RunGeneticAlgorithm();
         }
-        private NativeArray<VoxelStructure> population;
-        private NativeArray<VoxelAction> allActions; // Stores ALL actions
-        private NativeArray<int> actionOffsets; // Start indices per individual
         private void InitializePopulation()
         {
-            population = new NativeArray<VoxelStructure>(populationSize, Allocator.Persistent);
-            allActions = new NativeArray<VoxelAction>(populationSize * maxActionsPerIndividual, Allocator.Persistent);
-            actionOffsets = new NativeArray<int>(populationSize, Allocator.Persistent);
-            int actionIndex = 0;
+            // Get exterior voxels from your voxel grid
+            exteriorVoxels = VoxelGrid.Instance.GetExteriorVoxels();
+            population = new List<VoxelStructure>();
             for (int i = 0; i < populationSize; i++)
             {
-                population[i] = new VoxelStructure { startIndex = actionIndex, actionCount = Random.Range(5, maxActionsPerIndividual) };
-                actionOffsets[i] = actionIndex;
-                for (int j = 0; j < population[i].actionCount; j++)
-                {
-                    allActions[actionIndex++] = VoxelAction.GenerateValidAction(voxelGrid.GetExteriorVoxels());
-                }
+                population.Add(new VoxelStructure(Random.Range(5, maxActionsPerIndividual), exteriorVoxels));
             }
         }
-        private void RunEvolution()
+        private void RunGeneticAlgorithm()
         {
             for (int gen = 0; gen < generations; gen++)
             {
                 EvaluateFitness();
-                NativeArray<VoxelStructure> newPopulation = new NativeArray<VoxelStructure>(populationSize, Allocator.TempJob);
-                CrossoverPopulationJob crossoverJob = new CrossoverPopulationJob
+                List<VoxelStructure> newPopulation = new List<VoxelStructure>();
+                while (newPopulation.Count < populationSize)
                 {
-                    parent1 = population,
-                    parent2 = population,
-                    offspring = newPopulation
-                };
-                crossoverJob.Schedule(populationSize, 8).Complete();
-                MutatePopulationJob mutateJob = new MutatePopulationJob
-                {
-                    population = newPopulation,
-                    exteriorVoxels = voxelGrid.GetExteriorVoxels(),
-                    mutationRate = mutationRate
-                };
-                mutateJob.Schedule(populationSize, 8).Complete();
-                population.CopyFrom(newPopulation);
-                newPopulation.Dispose();
-                Debug.Log($"Generation {gen + 1} completed.");
+                    VoxelStructure parent1 = SelectParent();
+                    VoxelStructure parent2 = SelectParent();
+                    VoxelStructure offspring = Crossover(parent1, parent2);
+                    Mutate(offspring);
+                    newPopulation.Add(offspring);
+                }
+                population = newPopulation;
             }
         }
         private void EvaluateFitness()
         {
-            for (int i = 0; i < populationSize; i++)
+            foreach (var structure in population)
             {
-                fitnessValues[i] = CalculateFitness(population[i]);
+                //float drag = _voxelizedData.CalculateObjectDragForce(_voxelizedMesh.forward,_voxelizedMesh.Speed, _voxelizedMesh.AirDensity);
+                //float surfaceArea = _voxelizedData.CalculateFrontalArea();
+                //structure.Fitness = 1f / (drag + surfaceArea + 1f); // Example fitness function
+                structure.Fitness = _voxelizedData.CalculateDragCoefficient(_voxelizedMesh.forward, _voxelizedMesh.Speed, _voxelizedMesh.AirDensity);
             }
         }
-        private float CalculateFitness(VoxelStructure structure)
+        private VoxelStructure SelectParent()
         {
-            // Evaluate based on drag coefficient and surface area (to be implemented)
-            return Random.Range(0f, 1f); // Placeholder for real simulation-based fitness
+            // Tournament selection
+            int tournamentSize = 10;
+            VoxelStructure best = null;
+            float bestFitness = float.MaxValue;
+            for (int i = 0; i < tournamentSize; i++)
+            {
+                VoxelStructure candidate = population[Random.Range(0, population.Count)];
+                if (candidate.Fitness < bestFitness)
+                {
+                    best = candidate;
+                    bestFitness = candidate.Fitness;
+                }
+            }
+            return best.Copy();
         }
-        private void OnDestroy()
+        private VoxelStructure Crossover(VoxelStructure parent1, VoxelStructure parent2)
         {
-            population.Dispose();
-            offspring.Dispose();
-            fitnessValues.Dispose();
-            voxelGrid.Dispose();
+            List<VoxelAction> childActions = new List<VoxelAction>();
+            int maxActions = Mathf.Max(parent1.actions.Count, parent2.actions.Count);
+            for (int i = 0; i < maxActions; i++)
+            {
+                if (i < parent1.actions.Count && i < parent2.actions.Count)
+                {
+                    childActions.Add(Random.value > 0.5f ? parent1.actions[i] : parent2.actions[i]);
+                }
+                else if (i < parent1.actions.Count)
+                {
+                    childActions.Add(parent1.actions[i]);
+                }
+                else if (i < parent2.actions.Count)
+                {
+                    childActions.Add(parent2.actions[i]);
+                }
+            }
+            return new VoxelStructure(childActions);
+        }
+        private void Mutate(VoxelStructure structure)
+        {
+            for (int i = 0; i < structure.actions.Count; i++)
+            {
+                if (Random.value < mutationRate)
+                {
+                    structure.actions[i] = VoxelAction.GenerateValidAction(exteriorVoxels);
+                }
+            }
         }
     }
 }

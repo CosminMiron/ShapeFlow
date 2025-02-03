@@ -10,6 +10,9 @@ public class VoxelizedMesh : MonoBehaviour
     public MeshFilter MeshFilter;
     public bool _showGrid;
     public Vector3Int forward = new Vector3Int(0, 0, 1);
+    public float Speed = 30;
+    public float AirDensity = 1.2f;
+    public VoxelizedData VoxelizedData;
 
     private HashSet<Vector3Int> hash = new HashSet<Vector3Int>();
 
@@ -66,15 +69,15 @@ public class VoxelizedMesh : MonoBehaviour
         Bounds bounds = meshCollider.bounds;
         Vector3 minExtents = bounds.center - bounds.extents;
         LocalOrigin = transform.InverseTransformPoint(minExtents);
-        var ceva2 = new VoxelizedData(GridPoints, hash, HalfSize, x, y, z);
+        VoxelizedData = new VoxelizedData(GridPoints, hash, HalfSize, x, y, z);
 
-        Debug.LogError("DF  " + ceva2.CalculateObjectDragForce(forward, 30, 1.2f));
-        var result = ceva2.CalculateFrontalArea();
+        Debug.LogError("DF  " + VoxelizedData.CalculateObjectDragForce(forward, Speed, AirDensity));
+        var result = VoxelizedData.CalculateFrontalArea();
         Debug.LogError("FA  " + result);
 
-        Debug.LogError("DC  " + ceva2.CalculateDragCoefficient(forward, 30, 1.2f));
+        Debug.LogError("DC  " + VoxelizedData.CalculateDragCoefficient(forward, Speed, AirDensity));
 
-        return ceva2;
+        return VoxelizedData;
 
     }
 }

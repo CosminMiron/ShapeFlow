@@ -1,46 +1,39 @@
-using Unity.Collections;
 using UnityEngine;
 
-namespace CFD.GA
+namespace CFD.GAS
 {
-    public enum VoxelActionType { Extend, Shrink }
+    using System.Collections.Generic;
+    using System.Linq;
+    using UnityEngine;
 
     public struct VoxelAction
     {
-        public VoxelActionType type;
-        public Vector3Int Direction;
-        public float magnitude;
-        public Vector3Int position;
+        public Vector3Int position; // Where the action happens
 
-        public VoxelAction(VoxelActionType type, Vector3Int position, Vector3Int direction, float magnitude = 1f)
+        public Vector3Int direction; // In which direction we extend/shrink
+
+        public VoxelAction(Vector3Int pos, Vector3Int dir)
         {
-            this.type = type;
-            Direction = direction;
-            this.magnitude = magnitude;
-            this.position = position;
+            position = pos;
+            direction = dir;
         }
 
-        public static VoxelAction GenerateValidAction(NativeHashSet<Vector3Int> exteriorVoxels)
+        public static VoxelAction GenerateValidAction(HashSet<Vector3Int> exteriorVoxels)
+
         {
-            if (exteriorVoxels.Count == 0) return default;
 
-            NativeArray<Vector3Int> directions = new NativeArray<Vector3Int>(6, Allocator.Temp);
+            if (exteriorVoxels.Count == 0)
+            {
+                throw new System.Exception("No exterior voxels available!");
+            }
 
-            directions[0] = Vector3Int.left;
-            directions[1] = Vector3Int.right;
-            directions[2] = Vector3Int.up;
-            directions[3] = Vector3Int.down;
-            directions[4] = Vector3Int.forward;
-            directions[5] = Vector3Int.back;
+            Vector3Int selectedVoxel = exteriorVoxels.ElementAt(Random.Range(0, exteriorVoxels.Count));
 
-            NativeArray<Vector3Int> voxelArray = exteriorVoxels.ToNativeArray(Allocator.Temp);
-            Vector3Int chosenVoxel = voxelArray[UnityEngine.Random.Range(0, voxelArray.Length)];
-            Vector3Int chosenDirection = directions[UnityEngine.Random.Range(0, directions.Length)];
-            voxelArray.Dispose();
+            Vector3Int[] possibleDirections = { Vector3Int.up, Vector3Int.down, Vector3Int.left, Vector3Int.right, Vector3Int.forward, Vector3Int.back };
 
-            VoxelActionType actionType = UnityEngine.Random.value < 0.5f ? VoxelActionType.Extend : VoxelActionType.Shrink;
+            Vector3Int selectedDirection = possibleDirections[Random.Range(0, possibleDirections.Length)];
 
-            return new VoxelAction(actionType, chosenVoxel, chosenDirection);
+            return new VoxelAction(selectedVoxel, selectedDirection);
         }
     }
 }
