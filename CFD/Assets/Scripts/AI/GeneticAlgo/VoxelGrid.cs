@@ -24,6 +24,12 @@ namespace CFD.GAS
                     RemoveVoxel(action.position);
             }
         }*/
+
+        public void Init(HashSet<Vector3Int> init)
+        {
+            activeVoxels = new HashSet<Vector3Int>(init);
+        }
+
         public void AddVoxel(Vector3Int position)
         {
             activeVoxels.Add(position);
@@ -50,8 +56,9 @@ namespace CFD.GAS
         {
             Vector3Int[] neighbors =
             {
-           Vector3Int.up, Vector3Int.down, Vector3Int.left, Vector3Int.right, Vector3Int.forward, Vector3Int.back
-       };
+                Vector3Int.up, Vector3Int.down, Vector3Int.left, Vector3Int.right, Vector3Int.forward, Vector3Int.back
+             };
+
             foreach (var offset in neighbors)
             {
                 if (!activeVoxels.Contains(position + offset))

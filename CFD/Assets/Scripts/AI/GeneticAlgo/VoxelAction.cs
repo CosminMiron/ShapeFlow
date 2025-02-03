@@ -19,7 +19,6 @@ namespace CFD.GAS
         }
 
         public static VoxelAction GenerateValidAction(HashSet<Vector3Int> exteriorVoxels)
-
         {
 
             if (exteriorVoxels.Count == 0)

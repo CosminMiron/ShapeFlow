@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 namespace CFD.GAS
@@ -28,6 +29,19 @@ namespace CFD.GAS
             var copy = new VoxelStructure(new List<VoxelAction>(actions));
             copy.Fitness= Fitness;
             return copy;
+        }
+
+        public override string ToString()
+        {
+            var stringbuilder = new StringBuilder();
+            foreach (var item in actions)
+            {
+                stringbuilder.Append($"{item.position} {item.direction} \n");
+            }
+
+            stringbuilder.Append(Fitness);
+
+            return stringbuilder.ToString();
         }
     }
 }

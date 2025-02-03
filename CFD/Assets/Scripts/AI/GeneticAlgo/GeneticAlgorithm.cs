@@ -1,7 +1,5 @@
-using CFD.GA;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.InputSystem.HID.HID;
 
 namespace CFD.GAS
 {
@@ -19,7 +17,11 @@ namespace CFD.GAS
         [ContextMenu("Start GA")]
         private void StartGA()
         {
+            _voxelizedMesh.Voxelize();
+
             _voxelizedData = _voxelizedMesh.VoxelizedData;
+            VoxelGrid.Instance.Init(_voxelizedData.Hash);
+
             InitializePopulation();
             RunGeneticAlgorithm();
         }
@@ -35,6 +37,8 @@ namespace CFD.GAS
         }
         private void RunGeneticAlgorithm()
         {
+            var initialDragCoeficient = _voxelizedData.CalculateDragCoefficient(_voxelizedMesh.forward, _voxelizedMesh.Speed, _voxelizedMesh.AirDensity);
+            UnityEngine.Debug.LogError($"Initial drag coeficient: {initialDragCoeficient}");
             for (int gen = 0; gen < generations; gen++)
             {
                 EvaluateFitness();
@@ -49,7 +53,30 @@ namespace CFD.GAS
                 }
                 population = newPopulation;
             }
+
+            EvaluateFitness();
+
+            var bestFitness = float.MaxValue;
+            VoxelStructure bestStructure = null;
+
+            foreach (var structure in population)
+            {
+                if (structure.Fitness < bestFitness)
+                {
+                    bestStructure = structure;
+                    bestFitness = bestStructure.Fitness;
+                }
+            }
+
+            UnityEngine.Debug.LogError($"Best fitness drag coeficient: {bestFitness}");
+            var ceva = _voxelizedData.GetVoxelizedMutation(bestStructure.actions);
+            //_voxelizedMesh.GridPoints = new List<Vector3Int>(ceva.GridPoints);
+
+            UnityEngine.Debug.LogError(bestStructure.ToString());
+
+            ShowDiff(ceva.GridPoints);
         }
+
         private void EvaluateFitness()
         {
             foreach (var structure in population)
@@ -57,7 +84,8 @@ namespace CFD.GAS
                 //float drag = _voxelizedData.CalculateObjectDragForce(_voxelizedMesh.forward,_voxelizedMesh.Speed, _voxelizedMesh.AirDensity);
                 //float surfaceArea = _voxelizedData.CalculateFrontalArea();
                 //structure.Fitness = 1f / (drag + surfaceArea + 1f); // Example fitness function
-                structure.Fitness = _voxelizedData.CalculateDragCoefficient(_voxelizedMesh.forward, _voxelizedMesh.Speed, _voxelizedMesh.AirDensity);
+                var ceva = _voxelizedData.GetVoxelizedMutation(structure.actions);
+                structure.Fitness = ceva.CalculateDragCoefficient(_voxelizedMesh.forward, _voxelizedMesh.Speed, _voxelizedMesh.AirDensity);
             }
         }
         private VoxelStructure SelectParent()
@@ -107,6 +135,27 @@ namespace CFD.GAS
                     structure.actions[i] = VoxelAction.GenerateValidAction(exteriorVoxels);
                 }
             }
+        }
+
+        private void ShowDiff(List<Vector3Int> newList)
+        {
+            var points = new List<Vector3Int>();
+            foreach (var element in newList)
+            {
+                if (_voxelizedMesh.GridPoints.Contains(element)) continue;
+
+                points.Add(element);
+            }
+
+            foreach (var element in _voxelizedMesh.GridPoints)
+            {
+                if (!newList.Contains(element))
+                {
+                    points.Add(element);
+                }
+            }
+
+            _voxelizedMesh.GridPoints = points;
         }
     }
 }
