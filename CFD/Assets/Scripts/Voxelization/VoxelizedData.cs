@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using CFD.GAS;
 using UnityEngine;
 
 public class VoxelizedData
@@ -14,6 +15,7 @@ public class VoxelizedData
 
     public float HalfSize { get => _halfSize; }
     public List<Vector3Int> GridPoints { get => _gridPoints; set => _gridPoints = value; }
+    public HashSet<Vector3Int> Hash { get => _hash; set => _hash = value; }
 
     public VoxelizedData(List<Vector3Int> gridPoints, HashSet<Vector3Int> hash, float halfSize, int x, int y, int z)
     {
@@ -23,6 +25,13 @@ public class VoxelizedData
         xGridSize = x;
         yGridSize = y;
         zGridSize = z;
+    }
+
+    public VoxelizedData GetVoxelizedMutation(List<VoxelAction> actions)
+    {
+        var data = new VoxelizedData(_gridPoints, _hash, _halfSize, xGridSize, yGridSize, zGridSize);
+        data.ApplyActions(actions);
+        return data;
     }
 
     public float CalculateFrontalArea()
@@ -120,5 +129,19 @@ public class VoxelizedData
 
         _gridPoints.Add(point);
         _hash.Add(point);
+    }
+
+    private void ApplyActions(List<VoxelAction> actions)
+    {
+        foreach(var action in actions)
+        {
+            if(!_hash.Contains(action.position + action.direction))
+            {
+                AddPoint(action.position + action.direction);
+                continue;
+            }
+
+            RemovePoint(action.position);
+        }
     }
 }
