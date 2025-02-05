@@ -19,8 +19,8 @@ public class VoxelizedData
 
     public VoxelizedData(List<Vector3Int> gridPoints, HashSet<Vector3Int> hash, float halfSize, int x, int y, int z)
     {
-        _gridPoints = gridPoints;
-        _hash = hash;
+        _gridPoints = new List<Vector3Int>(gridPoints);
+        _hash = new HashSet<Vector3Int>(hash);
         _halfSize = halfSize;
         xGridSize = x;
         yGridSize = y;
@@ -133,9 +133,9 @@ public class VoxelizedData
 
     private void ApplyActions(List<VoxelAction> actions)
     {
-        foreach(var action in actions)
+        foreach (var action in actions)
         {
-            if(!_hash.Contains(action.position + action.direction))
+            if (!_hash.Contains(action.position + action.direction))
             {
                 AddPoint(action.position + action.direction);
                 continue;

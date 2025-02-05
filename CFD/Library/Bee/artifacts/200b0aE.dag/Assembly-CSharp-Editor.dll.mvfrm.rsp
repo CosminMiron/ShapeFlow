@@ -3,6 +3,7 @@ Library/Bee/artifacts/mvdfrm/Unity.AI.Navigation.Editor.ConversionSystem.ref.dll
 Library/Bee/artifacts/mvdfrm/Unity.AI.Navigation.Editor.ref.dll_F0EDAB69F288A2F3.mvfrm
 Library/Bee/artifacts/mvdfrm/Unity.AI.Navigation.Updater.ref.dll_C51C3847CE9500F9.mvfrm
 Library/Bee/artifacts/mvdfrm/Unity.AI.Navigation.ref.dll_62FEAEE8B284189E.mvfrm
+Library/Bee/artifacts/mvdfrm/Unity.Bindings.OpenImageIO.Editor.ref.dll_928D0CF5045FC588.mvfrm
 Library/Bee/artifacts/mvdfrm/Unity.Burst.Editor.ref.dll_EA1A6D1CB62C8BFD.mvfrm
 Library/Bee/artifacts/mvdfrm/Unity.Burst.ref.dll_A43E80D48102A6F4.mvfrm
 Library/Bee/artifacts/mvdfrm/Unity.Cinemachine.Editor.ref.dll_E997C01F367B0A63.mvfrm
@@ -18,6 +19,9 @@ Library/Bee/artifacts/mvdfrm/Unity.Multiplayer.Center.Editor.ref.dll_6DAF32D8644
 Library/Bee/artifacts/mvdfrm/Unity.PlasticSCM.Editor.ref.dll_CBF917C274624EE2.mvfrm
 Library/Bee/artifacts/mvdfrm/Unity.Postprocessing.Editor.ref.dll_AD00340600BDBD7C.mvfrm
 Library/Bee/artifacts/mvdfrm/Unity.Postprocessing.Runtime.ref.dll_9835F86260E556EF.mvfrm
+Library/Bee/artifacts/mvdfrm/Unity.Recorder.Base.ref.dll_11FF3DB602B5EFE5.mvfrm
+Library/Bee/artifacts/mvdfrm/Unity.Recorder.Editor.ref.dll_1ECB8EB8CD389761.mvfrm
+Library/Bee/artifacts/mvdfrm/Unity.Recorder.ref.dll_87B5BF8DA5743550.mvfrm
 Library/Bee/artifacts/mvdfrm/Unity.RenderPipeline.Universal.ShaderLibrary.ref.dll_8B099D8C97AF393F.mvfrm
 Library/Bee/artifacts/mvdfrm/Unity.RenderPipelines.Core.Editor.Shared.ref.dll_0A54E06D0D53005C.mvfrm
 Library/Bee/artifacts/mvdfrm/Unity.RenderPipelines.Core.Editor.ref.dll_57B051C6BAF6DF9D.mvfrm

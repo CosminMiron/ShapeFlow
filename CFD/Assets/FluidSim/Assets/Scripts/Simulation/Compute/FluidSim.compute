@@ -31,6 +31,7 @@ RWStructuredBuffer<float3> Debug;
 
 // Settings
 const uint numParticles;
+const float speed;
 const float planetSurfaceGravity;
 const float deltaTime;
 const float simTime;
@@ -257,10 +258,14 @@ void ExternalForces(uint3 id : SV_DispatchThreadID)
     //Velocities[id.x] += g * deltaTime;
 
     // Predict
-    float3 g = float3(0,0,-1);
-    if( Velocities[id.x].z > -2)
+    float3 g = float3(0,0,-speed/2);
+    if( Velocities[id.x].z > -speed)
     {
         Velocities[id.x] += g * deltaTime;
+    }
+    if( Velocities[id.x].z < -speed * 4)
+    {
+        Velocities[id.x] -= g * deltaTime;
     }
     PredictedPositions[id.x] = Positions[id.x] + Velocities[id.x] * 1 / 120.0;
 }

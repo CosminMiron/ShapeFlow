@@ -445,10 +445,12 @@ namespace AerodynamicObjects
 
         void EditorDestroy(UnityEngine.Object obj)
         {
+#if UNITY_EDITOR
             UnityEditor.EditorApplication.delayCall += () =>
             {
                 DestroyImmediate(obj);
             };
+#endif
         }
     }
 }

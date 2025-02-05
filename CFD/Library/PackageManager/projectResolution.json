@@ -88,6 +88,14 @@
       "version": "3.4.0",
       "source": "registry"
     },
+    "com.unity.recorder@5.1.2": {
+      "name": "com.unity.recorder",
+      "resolvedPath": "/Users/mironcosmin/ShapeFlow/CFD/Library/PackageCache/com.unity.recorder",
+      "fingerprint": "979a3db2a7818d9c4852c886631b01e394d80af0",
+      "editorCompatibility": "2023.1.1f1",
+      "version": "5.1.2",
+      "source": "registry"
+    },
     "com.unity.render-pipelines.universal@17.0.3": {
       "name": "com.unity.render-pipelines.universal",
       "resolvedPath": "/Users/mironcosmin/ShapeFlow/CFD/Library/PackageCache/com.unity.render-pipelines.universal",
@@ -364,6 +372,22 @@
       "version": "17.0.3",
       "source": "builtin"
     },
+    "com.unity.collections@2.4.3": {
+      "name": "com.unity.collections",
+      "resolvedPath": "/Users/mironcosmin/ShapeFlow/CFD/Library/PackageCache/com.unity.collections",
+      "fingerprint": "eba9b2ae55c09c3548eaeac72a96dda87b0640cf",
+      "editorCompatibility": "2022.3.11f1",
+      "version": "2.4.3",
+      "source": "registry"
+    },
+    "com.unity.bindings.openimageio@1.0.0": {
+      "name": "com.unity.bindings.openimageio",
+      "resolvedPath": "/Users/mironcosmin/ShapeFlow/CFD/Library/PackageCache/com.unity.bindings.openimageio",
+      "fingerprint": "3229d2aa5c76c70269dc58c79d5864ec84fa4a74",
+      "editorCompatibility": "2023.1.0a1",
+      "version": "1.0.0",
+      "source": "registry"
+    },
     "com.unity.splines@2.6.1": {
       "name": "com.unity.splines",
       "resolvedPath": "/Users/mironcosmin/ShapeFlow/CFD/Library/PackageCache/com.unity.splines",
@@ -396,14 +420,6 @@
       "version": "1.3.2",
       "source": "registry"
     },
-    "com.unity.collections@2.4.3": {
-      "name": "com.unity.collections",
-      "resolvedPath": "/Users/mironcosmin/ShapeFlow/CFD/Library/PackageCache/com.unity.collections",
-      "fingerprint": "eba9b2ae55c09c3548eaeac72a96dda87b0640cf",
-      "editorCompatibility": "2022.3.11f1",
-      "version": "2.4.3",
-      "source": "registry"
-    },
     "com.unity.rendering.light-transport@1.0.1": {
       "name": "com.unity.rendering.light-transport",
       "resolvedPath": "/Users/mironcosmin/ShapeFlow/CFD/Library/PackageCache/com.unity.rendering.light-transport",
@@ -411,14 +427,6 @@
       "editorCompatibility": "2023.3.0b1",
       "version": "1.0.1",
       "source": "builtin"
-    },
-    "com.unity.settings-manager@2.0.1": {
-      "name": "com.unity.settings-manager",
-      "resolvedPath": "/Users/mironcosmin/ShapeFlow/CFD/Library/PackageCache/com.unity.settings-manager",
-      "fingerprint": "56a930affa1e4462d3595b5c19a1c2a4bf2015d2",
-      "editorCompatibility": "2018.4.0a1",
-      "version": "2.0.1",
-      "source": "registry"
     },
     "com.unity.nuget.mono-cecil@1.11.4": {
       "name": "com.unity.nuget.mono-cecil",
@@ -434,6 +442,14 @@
       "fingerprint": "fb0dc592af8b524f1a06c50d7caf95552f1bcd2f",
       "editorCompatibility": "2020.3.0a1",
       "version": "3.0.3",
+      "source": "registry"
+    },
+    "com.unity.settings-manager@2.0.1": {
+      "name": "com.unity.settings-manager",
+      "resolvedPath": "/Users/mironcosmin/ShapeFlow/CFD/Library/PackageCache/com.unity.settings-manager",
+      "fingerprint": "56a930affa1e4462d3595b5c19a1c2a4bf2015d2",
+      "editorCompatibility": "2018.4.0a1",
+      "version": "2.0.1",
       "source": "registry"
     }
   }

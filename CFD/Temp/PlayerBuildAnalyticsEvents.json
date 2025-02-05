@@ -1,0 +1,216 @@
+{
+  "player_build_data": [
+    {
+      "type": "playerBuildTimingData",
+      "msg": {
+        "build_event_id": "da3c44d34391f4aeb95f851be155a430",
+        "build_player": 125127,
+        "preprocess_player": 65,
+        "produce_player_script_assemblies": 29858,
+        "build_scripts_dlls": 18,
+        "writing_asset_files": 76919,
+        "postprocess_built_player": 10763,
+        "node_summary_table": [
+          {
+            "name": "Csc",
+            "duration": 1818
+          },
+          {
+            "name": "Csc",
+            "duration": 5288
+          },
+          {
+            "name": "Csc",
+            "duration": 2948
+          },
+          {
+            "name": "Csc",
+            "duration": 2293
+          },
+          {
+            "name": "Csc",
+            "duration": 1735
+          },
+          {
+            "name": "Csc",
+            "duration": 2070
+          },
+          {
+            "name": "Csc",
+            "duration": 1887
+          },
+          {
+            "name": "Csc",
+            "duration": 3138
+          },
+          {
+            "name": "Csc",
+            "duration": 1539
+          },
+          {
+            "name": "Csc",
+            "duration": 1914
+          },
+          {
+            "name": "Csc",
+            "duration": 1836
+          },
+          {
+            "name": "Csc",
+            "duration": 1780
+          },
+          {
+            "name": "Csc",
+            "duration": 4959
+          },
+          {
+            "name": "Csc",
+            "duration": 2443
+          },
+          {
+            "name": "Csc",
+            "duration": 1624
+          },
+          {
+            "name": "Csc",
+            "duration": 2443
+          },
+          {
+            "name": "Csc",
+            "duration": 1746
+          },
+          {
+            "name": "Csc",
+            "duration": 1787
+          },
+          {
+            "name": "Csc",
+            "duration": 2307
+          },
+          {
+            "name": "Csc",
+            "duration": 2743
+          },
+          {
+            "name": "Csc",
+            "duration": 1751
+          },
+          {
+            "name": "Csc",
+            "duration": 1876
+          },
+          {
+            "name": "Csc",
+            "duration": 2026
+          },
+          {
+            "name": "Csc",
+            "duration": 1801
+          },
+          {
+            "name": "Csc",
+            "duration": 1837
+          },
+          {
+            "name": "Csc",
+            "duration": 2802
+          },
+          {
+            "name": "Csc",
+            "duration": 2957
+          },
+          {
+            "name": "Csc",
+            "duration": 1762
+          },
+          {
+            "name": "Csc",
+            "duration": 3913
+          },
+          {
+            "name": "Csc",
+            "duration": 2204
+          },
+          {
+            "name": "Csc",
+            "duration": 1831
+          },
+          {
+            "name": "Csc",
+            "duration": 3348
+          },
+          {
+            "name": "Csc",
+            "duration": 2003
+          },
+          {
+            "name": "Csc",
+            "duration": 2258
+          },
+          {
+            "name": "Csc",
+            "duration": 3049
+          },
+          {
+            "name": "Csc",
+            "duration": 1663
+          },
+          {
+            "name": "Csc",
+            "duration": 2035
+          },
+          {
+            "name": "Csc",
+            "duration": 1831
+          },
+          {
+            "name": "Csc",
+            "duration": 2599
+          },
+          {
+            "name": "Csc",
+            "duration": 1803
+          },
+          {
+            "name": "Csc",
+            "duration": 2035
+          },
+          {
+            "name": "Csc",
+            "duration": 1914
+          },
+          {
+            "name": "Csc",
+            "duration": 3918
+          },
+          {
+            "name": "Csc",
+            "duration": 3106
+          },
+          {
+            "name": "Csc",
+            "duration": 2154
+          },
+          {
+            "name": "Csc",
+            "duration": 1748
+          },
+          {
+            "name": "UnityLinker.exe",
+            "duration": 278
+          }
+        ]
+      },
+      "version": 1
+    },
+    {
+      "type": "unityLinkerData",
+      "msg": {
+        "build_event_id": "da3c44d34391f4aeb95f851be155a430",
+        "node_executed": true,
+        "option_rule_set": "Copy"
+      },
+      "version": 1
+    }
+  ]
+}

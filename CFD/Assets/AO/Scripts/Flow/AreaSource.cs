@@ -128,6 +128,6 @@ namespace AerodynamicObjects.Flow
                     break;
             }
         }
-    }
 #endif
+    }
 }

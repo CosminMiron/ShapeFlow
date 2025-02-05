@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: f6ebaa94097f3da47a01d47be07f26f3
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304754
+  packageName: Sport Car Free
+  packageVersion: 1.0
+  assetPath: Assets/SportCar/Models/SportCar_1/SportCar_1.FBX
+  uploadId: 718821
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -30,7 +37,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -105,10 +112,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 304754
-  packageName: Sport Car Free
-  packageVersion: 1.0
-  assetPath: Assets/SportCar/Models/SportCar_1/SportCar_1.FBX
-  uploadId: 718821

@@ -100,6 +100,6 @@ namespace AerodynamicObjects.Flow
             Handles.color = colour;
             Handles.ArrowHandleCap(0, arrowCentre, Quaternion.LookRotation(velocity, Vector3.up), arrowLength, EventType.Repaint);
         }
-    }
 #endif
+    }
 }

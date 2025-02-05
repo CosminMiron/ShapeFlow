@@ -150,67 +150,6 @@ namespace VoxelSystem
                     }
                 }
             }
-
-            // for(int x = 0; x < width; x++)
-            // {
-            //     for(int y = 0; y < height; y++)
-            //     {
-            //         for(int z = 0; z < depth; z++)
-            //         {
-            //             if (volume[x, y, z].IsEmpty()) continue;
-
-            //             int ifront = z;
-
-            //             Vector2 uv = Vector2.zero;
-            //             for(; ifront < depth; ifront++) {
-            //                 if(!volume[x, y, ifront].IsFrontFace()) {
-            //                     break;
-            //                 }
-            //                 uv = volume[x, y, ifront].uv;
-            //             }
-
-            //             if(ifront >= depth) break;
-
-            //             var iback = ifront;
-
-            //             // step forward to cavity
-            //             for (; iback < depth && volume[x, y, iback].IsEmpty(); iback++) {}
-
-            //             if (iback >= depth) break;
-
-            //             // check if iback is back voxel
-            //             if(volume[x, y, iback].IsBackFace()) {
-            //                 // step forward to back face
-            //                 for (; iback < depth && volume[x, y, iback].IsBackFace(); iback++) {}
-            //             }
-
-            //             // fill from ifront to iback
-            //             for(int z2 = ifront; z2 < iback; z2++)
-            //             {
-            //                 var p = boxes[x, y, z2].center;
-            //                 var voxel = volume[x, y, z2];
-            //                 voxel.position = p;
-            //                 voxel.uv = uv;
-            //                 voxel.fill = 1;
-            //                 volume[x, y, z2] = voxel;
-            //             }
-
-            //             z = iback;
-            //         }
-            //     }
-            // }
-
-            // voxels = new List<Voxel_t>();
-            // for(int x = 0; x < width; x++) {
-            //     for(int y = 0; y < height; y++) {
-            //         for(int z = 0; z < depth; z++) {
-            //             if(!volume[x, y, z].IsEmpty())
-            //             {
-            //                 voxels.Add(volume[x, y, z]);
-            //             }
-            //         }
-            //     }
-            // }
         }
 
         public static bool Intersects(Triangle tri, Bounds aabb)

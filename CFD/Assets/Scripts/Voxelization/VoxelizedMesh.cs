@@ -13,6 +13,7 @@ public class VoxelizedMesh : MonoBehaviour
     public float Speed = 30;
     public float AirDensity = 1.2f;
     public VoxelizedData VoxelizedData;
+    public int resolution = 100;
 
     private HashSet<Vector3Int> hash = new HashSet<Vector3Int>();
 
@@ -54,7 +55,7 @@ public class VoxelizedMesh : MonoBehaviour
     public VoxelizedData Voxelize()
     {
         GridPoints.Clear();
-        CPUVoxelizer.Voxelize(MeshFilter.sharedMesh, 100, out var ceva, out var unit, out var x, out var y, out var z);
+        CPUVoxelizer.Voxelize(MeshFilter.sharedMesh, resolution, out var ceva, out var unit, out var x, out var y, out var z);
 
         GridPoints = ceva;
         foreach (var p in ceva)
@@ -79,5 +80,49 @@ public class VoxelizedMesh : MonoBehaviour
 
         return VoxelizedData;
 
+    }
+
+    public VoxelizedData Voxelize(int resolution)
+    {
+        GridPoints.Clear();
+        CPUVoxelizer.Voxelize(MeshFilter.sharedMesh, resolution, out var ceva, out var unit, out var x, out var y, out var z);
+
+        GridPoints = ceva;
+        foreach (var p in ceva)
+        {
+            hash.Add(p);
+        }
+        HalfSize = unit / 2f;
+        if (!MeshFilter.TryGetComponent(out MeshCollider meshCollider))
+        {
+            meshCollider = MeshFilter.gameObject.AddComponent<MeshCollider>();
+        }
+        Bounds bounds = meshCollider.bounds;
+        Vector3 minExtents = bounds.center - bounds.extents;
+        LocalOrigin = transform.InverseTransformPoint(minExtents);
+        VoxelizedData = new VoxelizedData(GridPoints, hash, HalfSize, x, y, z);
+
+        return VoxelizedData;
+    }
+
+    private void ShowDiff(List<Vector3Int> newList)
+    {
+        var points = new List<Vector3Int>();
+        foreach (var element in newList)
+        {
+            if (GridPoints.Contains(element)) continue;
+
+            points.Add(element);
+        }
+
+        foreach (var element in GridPoints)
+        {
+            if (!newList.Contains(element))
+            {
+                points.Add(element);
+            }
+        }
+
+        GridPoints = points;
     }
 }

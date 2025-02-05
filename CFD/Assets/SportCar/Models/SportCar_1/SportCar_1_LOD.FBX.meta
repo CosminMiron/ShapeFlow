@@ -1,7 +1,14 @@
 fileFormatVersion: 2
 guid: 392a2733746a94647aa361cbbbb9407c
+AssetOrigin:
+  serializedVersion: 1
+  productId: 304754
+  packageName: Sport Car Free
+  packageVersion: 1.0
+  assetPath: Assets/SportCar/Models/SportCar_1/SportCar_1_LOD.FBX
+  uploadId: 718821
 ModelImporter:
-  serializedVersion: 21300
+  serializedVersion: 22200
   internalIDToNameTable: []
   externalObjects: {}
   materials:
@@ -16,8 +23,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 1
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -32,7 +37,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages:
     - 0.25
@@ -43,6 +48,7 @@ ModelImporter:
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
+    importPhysicalCameras: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -103,15 +109,9 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 0
   remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 304754
-  packageName: Sport Car Free
-  packageVersion: 1.0
-  assetPath: Assets/SportCar/Models/SportCar_1/SportCar_1_LOD.FBX
-  uploadId: 718821

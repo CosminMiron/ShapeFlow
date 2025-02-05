@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using CFD.GAS;
 using UnityEngine;
 
 public class MeshEditor : MonoBehaviour
@@ -88,12 +89,10 @@ public class MeshEditor : MonoBehaviour
         renderer.materials = _meshRenderer.sharedMaterials;
     }
 
-    public Vector3[] MoveVoxel(VoxelizedData data, Mesh mesh, List<Vector3Int> pos, Vector3 direction)
+    public Vector3[] MoveVoxel(VoxelizedData data, Mesh mesh, Vector3[] vertices, List<VoxelAction> actions)
     {
         var halfSize = data.HalfSize * 2f;
-        mesh.RecalculateBounds();
 
-        var vertices = mesh.vertices;
         var mbounds = mesh.bounds;
         var unit = halfSize;
         var hunit = data.HalfSize;
@@ -101,41 +100,55 @@ public class MeshEditor : MonoBehaviour
 
         var start = mbounds.min - new Vector3(hunit, hunit, hunit);
 
-        var vertHash = new HashSet<Vector3>();
 
-        foreach (var poz in data.GridPoints)
+        foreach (var action in actions)
         {
-            if (!pos.Contains(poz)) continue;
+            if (!data.Hash.Contains(action.position)) continue;
 
-            var p = new Vector3(poz.x, poz.y, poz.z) * unit + start;
+            var p = new Vector3(action.position.x, action.position.y, action.position.z) * unit + start;
             var bounds = new Bounds(p, voxelSize);
 
             for (int i = 0, n = vertices.Length; i < n; i++)
             {
                 if (bounds.Contains(vertices[i]))
                 {
-                    if (!vertHash.Contains(vertices[i]))
-                    {
-                        vertHash.Add(vertices[i]);
-                    }
+                    var direction = new Vector3(action.direction.x, action.direction.y, action.direction.z);
+                    var offset = direction * data.HalfSize * 4;
+
+                    vertices[i] += offset;
                 }
-            }
-        }
-
-        var offset = direction * data.HalfSize;
-
-        for (int i = 0, n = vertices.Length; i < n; i++)
-        {
-            if (vertHash.Contains(vertices[i]))
-            {
-                vertices[i] += offset;
             }
         }
 
         return vertices;
     }
 
-    private void CreateNewMesh(Vector3[] vertices, Mesh startMesh)
+    public Mesh CreateMesh(Vector3[] vertices, Mesh startMesh)
+    {
+        Mesh mesh = new Mesh();
+        mesh.SetVertices(vertices);
+        mesh.normals = startMesh.normals;
+        mesh.tangents = startMesh.tangents;
+        mesh.uv = startMesh.uv;
+        mesh.uv2 = startMesh.uv2;
+        var count = startMesh.subMeshCount;
+
+        for (int i = 0; i < count; i++)
+        {
+            mesh.subMeshCount = count;
+            var trg = startMesh.GetTriangles(i);
+            mesh.SetTriangles(trg, i);
+            var submesh = startMesh.GetSubMesh(i);
+            mesh.SetSubMesh(i, submesh);
+        }
+
+        mesh.RecalculateBounds();
+        mesh.RecalculateNormals();
+
+        return mesh;
+    }
+
+    public void CreateNewMesh(Vector3[] vertices, Mesh startMesh)
     {
         Mesh mesh = new Mesh();
         mesh.SetVertices(vertices);
@@ -158,8 +171,7 @@ public class MeshEditor : MonoBehaviour
         mesh.RecalculateNormals();
 
         GameObject go = new GameObject("Voxelized");
-        go.transform.parent = transform;
-        go.transform.localPosition = Vector3.zero;
+        go.transform.localPosition = transform.position + new Vector3(4, 0, 0);
         go.transform.localScale = Vector3.one;
         go.transform.localRotation = Quaternion.identity;
 

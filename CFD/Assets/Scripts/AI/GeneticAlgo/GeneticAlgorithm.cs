@@ -1,11 +1,14 @@
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+using VoxelSystem;
 
 namespace CFD.GAS
 {
     public class GeneticAlgorithm : MonoBehaviour
     {
         [SerializeField] private VoxelizedMesh _voxelizedMesh;
+        [SerializeField] private MeshEditor _meshEditor;
         public int populationSize = 10;
         public int maxActionsPerIndividual = 20;
         public float mutationRate = 0.1f;
@@ -25,6 +28,17 @@ namespace CFD.GAS
             InitializePopulation();
             RunGeneticAlgorithm();
         }
+
+        public void StartGA(int population, int maxActions, float rate, int generations)
+        {
+            populationSize = population;
+            maxActionsPerIndividual = maxActions;
+            mutationRate = rate;
+            this.generations = generations;
+
+            StartGA();
+        }
+
         private void InitializePopulation()
         {
             // Get exterior voxels from your voxel grid
@@ -32,15 +46,17 @@ namespace CFD.GAS
             population = new List<VoxelStructure>();
             for (int i = 0; i < populationSize; i++)
             {
-                population.Add(new VoxelStructure(Random.Range(5, maxActionsPerIndividual), exteriorVoxels));
+                population.Add(new VoxelStructure(Random.Range(maxActionsPerIndividual / 2, maxActionsPerIndividual), exteriorVoxels));
             }
         }
-        private void RunGeneticAlgorithm()
+        private async void RunGeneticAlgorithm()
         {
             var initialDragCoeficient = _voxelizedData.CalculateDragCoefficient(_voxelizedMesh.forward, _voxelizedMesh.Speed, _voxelizedMesh.AirDensity);
             UnityEngine.Debug.LogError($"Initial drag coeficient: {initialDragCoeficient}");
             for (int gen = 0; gen < generations; gen++)
             {
+                await UniTask.NextFrame();
+                Debug.LogError(gen);
                 EvaluateFitness();
                 List<VoxelStructure> newPopulation = new List<VoxelStructure>();
                 while (newPopulation.Count < populationSize)
@@ -74,7 +90,22 @@ namespace CFD.GAS
 
             UnityEngine.Debug.LogError(bestStructure.ToString());
 
-            ShowDiff(ceva.GridPoints);
+            var vertices = _voxelizedMesh.MeshFilter.mesh.vertices;
+
+            vertices = _meshEditor.MoveVoxel(ceva, _voxelizedMesh.MeshFilter.mesh, vertices, bestStructure.actions);
+
+
+            _meshEditor.CreateNewMesh(vertices, _voxelizedMesh.MeshFilter.mesh);
+
+            var ceva2 = new List<Vector3Int>();
+            foreach (var action in bestStructure.actions)
+            {
+                ceva2.Add(action.position);
+            }
+
+            _voxelizedMesh.GridPoints = ceva2;
+
+            //ShowDiff(ceva.GridPoints);
         }
 
         private void EvaluateFitness()
@@ -84,7 +115,17 @@ namespace CFD.GAS
                 //float drag = _voxelizedData.CalculateObjectDragForce(_voxelizedMesh.forward,_voxelizedMesh.Speed, _voxelizedMesh.AirDensity);
                 //float surfaceArea = _voxelizedData.CalculateFrontalArea();
                 //structure.Fitness = 1f / (drag + surfaceArea + 1f); // Example fitness function
-                var ceva = _voxelizedData.GetVoxelizedMutation(structure.actions);
+                //var ceva = _voxelizedData.GetVoxelizedMutation(structure.actions);
+                var vertices = _meshEditor.MoveVoxel(_voxelizedData, _voxelizedMesh.MeshFilter.sharedMesh, _voxelizedMesh.MeshFilter.sharedMesh.vertices, structure.actions);
+                var mesh = _meshEditor.CreateMesh(vertices, _voxelizedMesh.MeshFilter.sharedMesh);
+                CPUVoxelizer.Voxelize(mesh, 25, out var ceva2, out var unit, out var x, out var y, out var z);
+                var hash = new HashSet<Vector3Int>();
+                foreach (var p in ceva2)
+                {
+                    hash.Add(p);
+                }
+                var ceva = new VoxelizedData(ceva2, hash, unit / 2f, x, y, z);
+
                 structure.Fitness = ceva.CalculateDragCoefficient(_voxelizedMesh.forward, _voxelizedMesh.Speed, _voxelizedMesh.AirDensity);
             }
         }

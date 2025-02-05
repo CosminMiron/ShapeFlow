@@ -81,7 +81,7 @@ public class SceneLoader
             case SceneId.Preload:
                 return "00.Preload";
             case SceneId.Lobby:
-                return "01.Lobby";
+                return "Lobby";
             case SceneId.Demo1:
                 return "Demo1";
             case SceneId.Demo2:
@@ -97,7 +97,7 @@ public class SceneLoader
         {
             case "00.Preload":
                 return SceneId.Preload;
-            case "01.Lobby":
+            case "Lobby":
                 return SceneId.Lobby;
             case "Demo1":
                 return SceneId.Demo1;

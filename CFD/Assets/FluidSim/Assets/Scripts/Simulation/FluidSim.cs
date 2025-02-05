@@ -34,6 +34,7 @@ namespace Seb.Fluid.Simulation
 		public float nearPressureMultiplier = 2.15f;
 		public float viscosityStrength = 0;
 		[Range(0, 1)] public float collisionDamping = 0.95f;
+		public float speed = 2f;
 
 		[Header("Foam Settings")] public bool foamActive;
 		public int maxFoamParticleCount = 1000;
@@ -275,6 +276,7 @@ namespace Seb.Fluid.Simulation
 			compute.SetInt("CelestialBodyCount", celestialBodyBuffer.count);
 
 			compute.SetInt("numParticles", positionBuffer.count);
+			compute.SetFloat("speed", speed);
 			compute.SetInt("MaxWhiteParticleCount", maxFoamParticleCount);
 
 			gpuSort = new GPUCountSort(spatialKeys, sortedIndices, (uint)(spatialKeys.count - 1));
@@ -442,6 +444,7 @@ namespace Seb.Fluid.Simulation
 			compute.SetFloat("pressureMultiplier", pressureMultiplier);
 			compute.SetFloat("nearPressureMultiplier", nearPressureMultiplier);
 			compute.SetFloat("viscosityStrength", viscosityStrength);
+			compute.SetFloat("speed", speed);
 			compute.SetVector("boundsSize", simBoundsSize);
 			compute.SetVector("centre", simBoundsCentre);
 

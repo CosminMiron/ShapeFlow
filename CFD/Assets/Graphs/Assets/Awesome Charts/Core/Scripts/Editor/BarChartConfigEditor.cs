@@ -1,12 +1,16 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace AwesomeCharts {
+namespace AwesomeCharts
+{
+#if UNITY_EDITOR
     [CustomPropertyDrawer(typeof(BarChartConfig))]
-    public class BarChartConfigEditor : PropertyDrawer {
+    public class BarChartConfigEditor : PropertyDrawer
+    {
         protected const float LINE_HEIGHT = 18f;
 
-        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label) {
+        public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+        {
             label = EditorGUI.BeginProperty(position, label, property);
             EditorGUI.PrefixLabel(position, label);
 
@@ -37,11 +41,13 @@ namespace AwesomeCharts {
             EditorGUI.EndProperty();
         }
 
-        public override float GetPropertyHeight(SerializedProperty property, GUIContent label) {
+        public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+        {
             return 5 * LINE_HEIGHT;
         }
 
-        protected virtual float SetupBarProperties(SerializedProperty property, Rect contentRect, float positionY) {
+        protected virtual float SetupBarProperties(SerializedProperty property, Rect contentRect, float positionY)
+        {
             EditorGUI.PropertyField(new Rect(contentRect.x, positionY, contentRect.width / 2, contentRect.height),
             property.FindPropertyRelative("barWidth"), new GUIContent("width"));
             EditorGUI.PropertyField(new Rect(contentRect.x + contentRect.width / 2, positionY, contentRect.width / 2, contentRect.height),
@@ -50,7 +56,8 @@ namespace AwesomeCharts {
             return positionY;
         }
 
-        protected virtual float SetupBarSpecingProperties(SerializedProperty property, Rect contentRect, float positionY) {
+        protected virtual float SetupBarSpecingProperties(SerializedProperty property, Rect contentRect, float positionY)
+        {
             EditorGUI.PropertyField(new Rect(contentRect.x, positionY, contentRect.width / 2, contentRect.height),
             property.FindPropertyRelative("barSpacing"), new GUIContent("base"));
             EditorGUI.PropertyField(new Rect(contentRect.x + contentRect.width / 2, positionY, contentRect.width / 2, contentRect.height),
@@ -59,7 +66,8 @@ namespace AwesomeCharts {
             return positionY;
         }
 
-        protected virtual float SetupPrefabProperties(SerializedProperty property, Rect contentRect, float positionY) {
+        protected virtual float SetupPrefabProperties(SerializedProperty property, Rect contentRect, float positionY)
+        {
             EditorGUI.PropertyField(new Rect(contentRect.x, positionY, contentRect.width, contentRect.height),
             property.FindPropertyRelative("barPrefab"), new GUIContent("bar"));
 
@@ -71,4 +79,5 @@ namespace AwesomeCharts {
             return positionY;
         }
     }
+#endif
 }

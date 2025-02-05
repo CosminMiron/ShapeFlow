@@ -2,6 +2,7 @@
 using UnityEditor;
 
 namespace AwesomeCharts {
+    #if UNITY_EDITOR
     [CustomPropertyDrawer(typeof(BarEntry))]
     public class BarEntryDrawer : PropertyDrawer {
 
@@ -29,4 +30,5 @@ namespace AwesomeCharts {
             EditorGUI.EndProperty();
         }
     }
+    #endif
 }

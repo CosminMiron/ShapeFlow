@@ -29,10 +29,13 @@ namespace AerodynamicObjects.Flow
                 }
                 else
                 {
+#if UNITY_EDITOR
+
                     UnityEditor.EditorApplication.delayCall += () =>
                     {
                         DestroyImmediate(gameObject);
                     };
+#endif
                 }
             }
         }
@@ -48,6 +51,6 @@ namespace AerodynamicObjects.Flow
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, 0.1f * HandleUtility.GetHandleSize(transform.position));
         }
-    }
 #endif
+    }
 }
