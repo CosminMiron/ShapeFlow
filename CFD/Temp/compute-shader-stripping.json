@@ -16,7 +16,7 @@
                             "inputVariants": 32,
                             "outputVariants": 32,
                             "variantName": "Kernel: StpSetup",
-                            "stripTimeMs": 0.0028
+                            "stripTimeMs": 0.0027
                         }
                     ]
                 }
@@ -36,7 +36,7 @@
                             "inputVariants": 16,
                             "outputVariants": 16,
                             "variantName": "Kernel: StpTaa",
-                            "stripTimeMs": 0.0009000000000000001
+                            "stripTimeMs": 0.0004
                         }
                     ]
                 }
@@ -56,7 +56,7 @@
                             "inputVariants": 1,
                             "outputVariants": 1,
                             "variantName": "Kernel: ComputePositionNormal",
-                            "stripTimeMs": 0.0009000000000000001
+                            "stripTimeMs": 0.0005
                         }
                     ]
                 }
@@ -76,7 +76,7 @@
                             "inputVariants": 16,
                             "outputVariants": 16,
                             "variantName": "Kernel: StpPreTaa",
-                            "stripTimeMs": 0.0002
+                            "stripTimeMs": 0.0001
                         }
                     ]
                 }
@@ -96,13 +96,13 @@
                             "inputVariants": 1,
                             "outputVariants": 1,
                             "variantName": "Kernel: InitializeOffsets",
-                            "stripTimeMs": 0.0008
+                            "stripTimeMs": 0.0004
                         },
                         {
                             "inputVariants": 1,
                             "outputVariants": 1,
                             "variantName": "Kernel: CalculateOffsets",
-                            "stripTimeMs": 0.0
+                            "stripTimeMs": 0.0001
                         }
                     ]
                 }
@@ -168,7 +168,7 @@
                             "inputVariants": 1,
                             "outputVariants": 1,
                             "variantName": "Kernel: ClearCounts",
-                            "stripTimeMs": 0.0002
+                            "stripTimeMs": 0.0
                         },
                         {
                             "inputVariants": 1,
@@ -206,7 +206,7 @@
                             "inputVariants": 1,
                             "outputVariants": 1,
                             "variantName": "Kernel: CopyCountToArgs",
-                            "stripTimeMs": 0.0006000000000000001
+                            "stripTimeMs": 0.001
                         }
                     ]
                 }
@@ -226,7 +226,7 @@
                             "inputVariants": 1,
                             "outputVariants": 1,
                             "variantName": "Kernel: CSMain",
-                            "stripTimeMs": 0.0002
+                            "stripTimeMs": 0.0001
                         }
                     ]
                 }
@@ -252,7 +252,7 @@
                             "inputVariants": 1,
                             "outputVariants": 1,
                             "variantName": "Kernel: UpdateSpatialHash",
-                            "stripTimeMs": 0.0002
+                            "stripTimeMs": 0.0001
                         },
                         {
                             "inputVariants": 1,
@@ -264,7 +264,7 @@
                             "inputVariants": 1,
                             "outputVariants": 1,
                             "variantName": "Kernel: ReorderCopyBack",
-                            "stripTimeMs": 0.0
+                            "stripTimeMs": 0.0001
                         },
                         {
                             "inputVariants": 1,
@@ -276,13 +276,13 @@
                             "inputVariants": 1,
                             "outputVariants": 1,
                             "variantName": "Kernel: CalculatePressureForce",
-                            "stripTimeMs": 0.0001
+                            "stripTimeMs": 0.0
                         },
                         {
                             "inputVariants": 1,
                             "outputVariants": 1,
                             "variantName": "Kernel: CalculateViscosity",
-                            "stripTimeMs": 0.0001
+                            "stripTimeMs": 0.0
                         },
                         {
                             "inputVariants": 1,
@@ -294,7 +294,7 @@
                             "inputVariants": 1,
                             "outputVariants": 1,
                             "variantName": "Kernel: UpdateDensityTexture",
-                            "stripTimeMs": 0.0001
+                            "stripTimeMs": 0.0
                         },
                         {
                             "inputVariants": 1,
@@ -306,7 +306,7 @@
                             "inputVariants": 1,
                             "outputVariants": 1,
                             "variantName": "Kernel: WhiteParticlePrepareNextFrame",
-                            "stripTimeMs": 0.0001
+                            "stripTimeMs": 0.0
                         }
                     ]
                 }
