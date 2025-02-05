@@ -8,7 +8,7 @@ public class FluidSettingsUI : MonoBehaviour
 {
     [SerializeField] private FluidSim _fluidSim;
     [SerializeField] private Transform _simObject;
-    [SerializeField] private Toggle _particlesToggle;
+    [SerializeField] private CustomToggle _particlesToggle;
     [SerializeField] private CustomToggle _trailsToggle;
     [SerializeField] private CustomToggle _flowFieldToggle;
     [SerializeField] private SliderManager _scaleSlider;
@@ -29,6 +29,7 @@ public class FluidSettingsUI : MonoBehaviour
 
     private void Start()
     {
+        _particlesToggle.toggleObject.isOn = _particleDisplay3D.enabled;
         _scaleSlider.mainSlider.value = _particleDisplay3D.scale;
         _velocitySlider.mainSlider.value = _particleDisplay3D.velocityDisplayMax;
         _trailsToggle.toggleObject.isOn = _flowTrails.activeSelf;
@@ -45,7 +46,8 @@ public class FluidSettingsUI : MonoBehaviour
         _position.mainSlider.value = _fluidSim.transform.position.x;
         _trailsToggle.UpdateState();
         _flowFieldToggle.UpdateState();
-        _particlesToggle.onValueChanged.AddListener(ChangeParticleState);
+        _particlesToggle.UpdateState();
+        _particlesToggle.toggleObject.onValueChanged.AddListener(ChangeParticleState);
         _scaleSlider.sliderEvent.AddListener(ChangeParticleScale);
         _velocitySlider.sliderEvent.AddListener(ChangeVelocityMax);
         _trailsToggle.toggleObject.onValueChanged.AddListener(ChangeTrailsState);
@@ -64,7 +66,7 @@ public class FluidSettingsUI : MonoBehaviour
 
     private void OnDestroy()
     {
-        _particlesToggle.onValueChanged.RemoveListener(ChangeParticleState);
+        _particlesToggle.toggleObject.onValueChanged.RemoveListener(ChangeParticleState);
         _scaleSlider.sliderEvent.RemoveListener(ChangeParticleScale);
         _velocitySlider.sliderEvent.RemoveListener(ChangeVelocityMax);
         _trailsToggle.toggleObject.onValueChanged.RemoveListener(ChangeTrailsState);
